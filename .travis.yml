@@ -1,6 +1,6 @@
 language: python
-python : 
+python:
     - "3.6"
 install: "pip3 install -r requirements.txt"
-scripts: 
-    - SECRET_KEY="handeitione" ./manage.py test
+script:
+    - SECRET_KEY="handeitione" ./manage.py
