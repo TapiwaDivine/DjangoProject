@@ -1,0 +1,103 @@
+/*----------------------------------------------Navbar styles-----------------*/
+.navbar{
+    max-height: 100px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+@media (max-width: 600px) { 
+    .navbar-brand img {
+        max-height: 70px;
+        position: absolute;
+        left: 15px;
+        top: 0;
+        margin: 0;
+        padding-top: 0;
+    }
+}
+
+.navbar-brand img {
+    max-height: 83px;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+.navbar-nav .nav-link {
+    padding-top: 0;
+    padding-bottom: 1rem;
+}
+.navbar-collapse {
+    margin-top: 38px;
+    background-color: #1a1a1a;
+    padding-left: 10px;
+    margin-left: 50px;
+}
+
+/*---------------------------------------------------home--------------------*/
+#showcase .bg-image{
+    background-image: linear-gradient(
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.2)),
+    url(/media/img/hero.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 95vh;
+    width: 100%;
+    top: 0;
+}
+h1.hero-header {
+    text-align: center;
+    font-size: 4vw;
+    color: #fff;
+    font-weight: 900;
+    padding-top: 150px;
+    font-family: encode sans-serif;
+}
+
+hr.hero{
+    border: 5px solid #FF69B4;
+    width: 30vw;
+    margin-top: 0px;
+}
+p.hero-text{
+    text-align: center;
+    color: #fff;
+    font-size: 1.5vw;
+    font-weight: 700;
+    
+}
+.btn-danger{
+    padding: 1rem 6rem;
+    border-radius: 40px;
+    font-size: 20px;
+}
+/*------------------------------------------------container------------------*/
+.container-fluid {
+    width: 100%;
+    height: 88vh;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/*--------------------------------------------------Services Section---------*/
+h2.section-header{
+    
+}
+
+
+/*---------------------------------------------------Footer-------------------*/
+#footer .bg-image{
+    background-image: url('/static/img/footer.png'); 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    transition: .5s;
+}
+
