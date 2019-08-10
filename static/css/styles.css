@@ -1,3 +1,4 @@
+/*-----------------------------------------------------------------------------------homepage----------*/
 /*----------------------------------------------Navbar styles-----------------*/
 .navbar{
     max-height: 100px;
@@ -28,14 +29,17 @@
     padding-top: 0;
     padding-bottom: 1rem;
     color: #fff !important;
-    border-bottom: 3px solid transparent
+    border-bottom: 3px solid transparent;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover{
     border-bottom: 3px solid #FF69B4;
-    transition: 0.7s all ease;
-    left: 0
+    transition: 0.9s;
+    left: 0;
+    transition-property: width;
+    transition-timing-function: ease-in-out;
 }
+
 .navbar-dark .navbar-nav .nav-link:active{
     border-bottom: 3px solid #FF69B4;
 }
@@ -47,7 +51,7 @@
     margin-left: 50px;
 }
 
-/*---------------------------------------------------home--------------------*/
+/*-------------------------------------------------hero section--------------------*/
 #showcase .bg-image{
     background-image: linear-gradient(
     rgba(0,0,0,0.3),
@@ -86,7 +90,7 @@
     border-radius: 40px;
     font-size: 20px;
 }
-/*------------------------------------------------container------------------*/
+/*---------------------------------------container------------------*/
 .container-fluid {
     width: 100%;
     padding-right: 0px;
