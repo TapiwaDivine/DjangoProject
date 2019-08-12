@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 
+if os.environ.get('DEVELOPMENT'):
+    development = True
+else:
+    development = False
+    
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,13 +26,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4++y5kid2j2g@__kym2ne_z^@6gzwxq9@7g$(t+_wbc!j6mo=_'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
 ALLOWED_HOSTS = ['64b552378f6a4cbaafb2bd0d5dab3481.vfs.cloud9.us-east-1.amazonaws.com',
-                 'uni-attractor.herokuapp.com']
+                 os.environ.get('HOSTNAME')]
 
 
 # Application definition
@@ -76,8 +81,15 @@ WSGI_APPLICATION = 'unicorn_attractor.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {'default': dj_database_url.parse("postgres://phzjongzoicpoc:c03e86713c412a486790253c4d095c82fe01983d74c232783ea922f81e225d10@ec2-54-228-243-29.eu-west-1.compute.amazonaws.com:5432/dl1homc4cnokp")}
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
