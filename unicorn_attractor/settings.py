@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import psycopg2
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -76,17 +76,7 @@ WSGI_APPLICATION = 'unicorn_attractor.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'foruizqe',
-        'USER': 'foruizqe',
-        'PASSWORD': 'nvhCrIvLt2HZhAzXrV4q6ItAHJWbJQQh',
-        'HOST': 'manny.db.elephantsql.com',
-        'PORT': '5432',
-    }
-}
-
+DATABASES = {'default': dj_database_url.parse("postgres://phzjongzoicpoc:c03e86713c412a486790253c4d095c82fe01983d74c232783ea922f81e225d10@ec2-54-228-243-29.eu-west-1.compute.amazonaws.com:5432/dl1homc4cnokp")}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
