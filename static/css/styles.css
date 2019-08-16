@@ -1,12 +1,5 @@
-/*-----------------------------------------------------------------------------------homepage----------*/
-/*----------------------------------------------Navbar styles-----------------*/
-.navbar{
-    max-height: 100px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-@media (max-width: 600px) { 
+/*----------------------------------------------------------------------------------------------------------------------Global----------*/
+@media only screen and (max-width: 600px) {
     .navbar-brand img {
         max-height: 70px;
         position: absolute;
@@ -15,7 +8,123 @@
         margin: 0;
         padding-top: 0;
     }
+/*---------------------------------NavMobile--*/
+    .hero-header {
+        text-align: center;
+        font-size: 30px;
+        color: #fff;
+        font-weight: 900;
+        font-family: 'Roboto', sans-serif;
+        padding-top: 150px;
+    }
+    .hero-text{
+        text-align: center;
+        color: #0080FF;
+        font-size: 20px;
+        font-weight: 900;
+        -webkit-text-stroke: .5px #000;
+    }
+    .reviews-header {
+        color: #fff;
+        text-align: center;
+        font-size: 3vw;
+        margin-top: 0px;
+        padding-top: 40px;
+    }
+    .service-section {
+        margin-top: 0px;
+    }
+    .reviews-img {
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%;
+        height: 160px;
+        margin-top: 0px;
+    }
+    .review1-hr {
+        width: 80%;
+        border: 2px solid #fff;
+        margin-top: 20px;
+    }
+    .card-deck {
+        margin-top: 31px;
+        margin-bottom: 0px;
+    }
+    .client-name {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .quotes {
+        color: #fff;
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+    .review2-text {
+        margin-left: 20px;
+        margin-top: 10px;
+        margin-right: 20px;
+        text-align: center;
+    }
+    .review1 {
+        background-color: #152579;
+        padding-top: 40px;
+        height: 100vh;
+    }
+    .review2 {
+        background-color: #fff;
+        padding-bottom: 60px;
+        height: 100vh;
+        }
+    .review1-text {
+        margin-top: 23px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+/*-------------------ServicesPage--*/
+
+    .hero-text2 {
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 900;
+        -webkit-text-stroke: .5px #000;
+    }
+    .webdev-img {
+        max-height: 240px;
+        margin-left: auto;
+        margin-top: 5vh;
+        margin-right: auto;
+    }
+    .bugsection {
+        padding-top: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    .webdev-header {
+        color: #fff;
+        margin-bottom: 0px;
+        font-size: 20px;
+    }
 }
+.container-fluid {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/*----------------------------------------------------------------------------------------------------------------------Base page---------*/
+
+.navbar{
+    max-height: 100px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 
 .navbar-brand img {
     max-height: 83px;
@@ -50,12 +159,32 @@
     padding-left: 10px;
     margin-left: 50px;
 }
+/*-----------------------------Footer----*/
+#footer {
+    background-color: #6699FF;
+}
+.footer-logo{
+    display: block;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+.copyrights {
+    text-align: center;
+    background-color: #C4C4C4;
+    padding: 20px;
+}
+.copyrights-text{
+    color: #0000ff;
+}
 
-/*-------------------------------------------------hero section--------------------*/
+/*----------------------------------------------------------------------------------------------------------------------homepage----------*/
+
+
 #showcase .bg-image{
     background-image: linear-gradient(
-    rgba(0,0,0,0.3),
-    rgba(0,0,0,0.2)),
+    rgba(19,19,19,0.1),
+    rgba(19,19,19,0.1)),
     url(/media/img/hero.jpeg);
     background-repeat: no-repeat;
     background-position: center;
@@ -66,11 +195,11 @@
 }
 .hero-header {
     text-align: center;
-    font-size: 4vw;
+    font-size: 48px;
     color: #fff;
     font-weight: 900;
+    font-family: 'Roboto', sans-serif;
     padding-top: 150px;
-    font-family: encode sans-serif;
 }
 
 .hero{
@@ -80,25 +209,18 @@
 }
 .hero-text{
     text-align: center;
-    color: #fff;
-    font-size: 1.5vw;
-    font-weight: 700;
-    
+    color: #0080FF;
+    font-size: 22px;
+    font-weight: 900;
+    -webkit-text-stroke: .5px #000;
 }
 .btn-danger{
     padding: 1rem 6rem;
     border-radius: 40px;
     font-size: 20px;
 }
-/*---------------------------------------container------------------*/
-.container-fluid {
-    width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
-}
-/*--------------------------------------------------Services Section---------*/
+
+/*---------------------------Services Section---------*/
 .section-header{
     text-align: center;
     color: #152579;
@@ -129,7 +251,10 @@
 .card{
     box-shadow: 0px 0px 5px 5px #152579;
 }
-/*---------------------------------------------------Reviews Section ---------*/
+.card-deck .card {
+    margin-bottom: 30px
+}
+/*--------------------Reviews Section ---------*/
 .reviews-header {
     color: #fff;
     text-align: center;
@@ -147,7 +272,7 @@
     display: block;
     margin: 0 auto;
     border-radius: 50%;
-    max-height: 200px;
+    height: 300px;
     margin-top: 70px;
 }
 .reviews-section{
@@ -158,6 +283,7 @@
 .review1{
     background-color: #152579;
     padding-bottom: 60px;
+    height: 80vh;
 }
 .review1-hr {
     width: 80%;
@@ -181,6 +307,11 @@
     color: #fff;
 }
 
+.review2{
+    background-color: #fff;
+    padding-bottom: 60px;
+    height: 80vh;
+}
 
 .review2-hr{
     width: 80%;
@@ -203,22 +334,63 @@
 .quotes2{
     color: #152579;
 }
+/*--------------------------------------------------------------------------------------------------------------Services Page---------------*/
 
-/*---------------------------------------------------Footer-------------------*/
-#footer {
-    background-color: #6699FF;
+#servicesshowcase .bg-image2{
+    background-image: linear-gradient(
+    rgba(19,19,19,0.1),
+    rgba(19,19,19,0.1)),
+    url(/media/img/laptop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 95vh;
+    width: 100%;
+    top: 0;
 }
-.footer-logo{
-    display: block;
-    margin: 0 auto;
-    padding-top: 100px;
-    padding-bottom: 80px;
-}
-.copyrights {
+
+.hero-text2{
     text-align: center;
-    background-color: #C4C4C4;
-    padding: 20px;
+    color: #fff;
+    font-size: 1.8vw;
+    font-weight: 900;
+    -webkit-text-stroke: .5px #000;
 }
-.copyrights-text{
-    color: #0000ff;
+
+.bugsection{
+    padding: 100px;
+}
+
+.bugssection-header{
+    color: #CC0066;
+}
+
+.bugsection-text{
+    color: #CC0066;
+}
+
+.issues-btn{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #fff;
+    border-style: none;
+    background-color: #0080FF;
+}
+
+.bugsec-img{
+    max-height: 300px;
+}
+.webdev-img{
+    max-height: 300px;
+    margin-left: 20vh;
+    margin-top: 10vh;
+    margin-right: auto;
+}
+.webdev-header{
+    color: #fff;
+}
+.webdev-text{
+    color: #fff;
 }
