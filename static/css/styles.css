@@ -1,114 +1,4 @@
 /*----------------------------------------------------------------------------------------------------------------------Global----------*/
-@media only screen and (max-width: 600px) {
-    .navbar-brand img {
-        max-height: 70px;
-        position: absolute;
-        left: 15px;
-        top: 0;
-        margin: 0;
-        padding-top: 0;
-    }
-/*---------------------------------NavMobile--*/
-    .hero-header {
-        text-align: center;
-        font-size: 30px;
-        color: #fff;
-        font-weight: 900;
-        font-family: 'Roboto', sans-serif;
-        padding-top: 150px;
-    }
-    .hero-text{
-        text-align: center;
-        color: #0080FF;
-        font-size: 20px;
-        font-weight: 900;
-        -webkit-text-stroke: .5px #000;
-    }
-    .reviews-header {
-        color: #fff;
-        text-align: center;
-        font-size: 3vw;
-        margin-top: 0px;
-        padding-top: 40px;
-    }
-    .service-section {
-        margin-top: 0px;
-    }
-    .reviews-img {
-        display: block;
-        margin: 0 auto;
-        border-radius: 50%;
-        height: 160px;
-        margin-top: 0px;
-    }
-    .review1-hr {
-        width: 80%;
-        border: 2px solid #fff;
-        margin-top: 20px;
-    }
-    .card-deck {
-        margin-top: 31px;
-        margin-bottom: 0px;
-    }
-    .client-name {
-        color: #fff;
-        font-size: 14px;
-        font-weight: 600;
-    }
-    .quotes {
-        color: #fff;
-        font-size: 12px;
-        margin-bottom: 30px;
-    }
-    .review2-text {
-        margin-left: 20px;
-        margin-top: 10px;
-        margin-right: 20px;
-        text-align: center;
-    }
-    .review1 {
-        background-color: #152579;
-        padding-top: 40px;
-        height: 100vh;
-    }
-    .review2 {
-        background-color: #fff;
-        padding-bottom: 60px;
-        height: 100vh;
-        }
-    .review1-text {
-        margin-top: 23px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-/*-------------------ServicesPage--*/
-
-    .hero-text2 {
-        text-align: center;
-        color: #fff;
-        font-size: 18px;
-        font-weight: 900;
-        -webkit-text-stroke: .5px #000;
-    }
-    .webdev-img {
-        max-height: 240px;
-        margin-left: auto;
-        margin-top: 5vh;
-        margin-right: auto;
-    }
-    .bugsection {
-        padding-top: 40px;
-        padding-left: 30px;
-        padding-right: 30px;
-        text-align: center;
-        padding-bottom: 40px;
-    }
-    .webdev-header {
-        color: #fff;
-        margin-bottom: 0px;
-        font-size: 20px;
-    }
-}
 .container-fluid {
     width: 100%;
     padding-right: 0px;
@@ -209,10 +99,10 @@
 }
 .hero-text{
     text-align: center;
-    color: #0080FF;
+    color: #fff;
     font-size: 22px;
     font-weight: 900;
-    -webkit-text-stroke: .5px #000;
+    -webkit-text-stroke: .5px #fff;
 }
 .btn-danger{
     padding: 1rem 6rem;
@@ -224,7 +114,7 @@
 .section-header{
     text-align: center;
     color: #152579;
-    font-size: 3vw;
+    font-size: 40px;
     margin-top: 50px;
 }
 
@@ -258,7 +148,7 @@
 .reviews-header {
     color: #fff;
     text-align: center;
-    font-size: 3vw;
+    font-size: 40px;
     margin-top: 50px;
     padding-top: 40px;
 }
@@ -283,7 +173,7 @@
 .review1{
     background-color: #152579;
     padding-bottom: 60px;
-    height: 80vh;
+    height: 100%;
 }
 .review1-hr {
     width: 80%;
@@ -310,7 +200,7 @@
 .review2{
     background-color: #fff;
     padding-bottom: 60px;
-    height: 80vh;
+    height: 100%;
 }
 
 .review2-hr{
@@ -352,9 +242,9 @@
 .hero-text2{
     text-align: center;
     color: #fff;
-    font-size: 1.8vw;
+    font-size: 22px;
     font-weight: 900;
-    -webkit-text-stroke: .5px #000;
+    -webkit-text-stroke: .5px #fff;
 }
 
 .bugsection{

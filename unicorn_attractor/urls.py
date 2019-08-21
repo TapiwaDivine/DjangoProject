@@ -20,11 +20,16 @@ from django.views.static import serve
 from .settings import MEDIA_ROOT
 from home import urls as urls_home
 from services import urls
-
+from accounts import urls as urls_logout
+from accounts import urls as urls_login
+from accounts import urls as urls_signup
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', RedirectView.as_view(url='home/')),
     url(r'home/', include('home.urls')),
     url(r'^services/', include('services.urls')),
+    url(r'^accounts/logout', include('accounts.urls')),
+    url(r'^accounts/login', include('accounts.urls')),
+    url(r'^accounts/signup', include('accounts.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ]
