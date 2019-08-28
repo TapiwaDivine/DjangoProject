@@ -2,12 +2,30 @@
 {% load static from staticfiles %}
 {% block content %}
 <div class="container-fluid">
-    <section id="servicesshowcase">
-        <div class="bg-image2">
-            <h1 class="hero-header">Software Solutions</h1>
-            <hr class="hero">
-            <p class="hero-text2">Develop, Maintain and Renovate</p>
-        </div>
-    </section>
+     <div class="bg-image3">
+          <div class="login-box">
+               <h1 class="form-header">Login </h1>
+               <form method="" action="#">
+                    <div class="form-label-group">
+                         <label for="username">Username</label>
+                         <input type="username" id="username" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="form-label-group">
+                         <label for="inputPassword">Password <a class="forgot-pswd" href="#">Forgot password?</a></label>
+                         <input type="password" id="inputPassword" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="custom-control custom-checkbox mb-3">
+                         <input type="checkbox" class="custom-control-input" id="customCheck1">
+                         <label class="custom-control-label" for="customCheck1">Remember Password?</label>
+                    </div>
+                    <button class="btn btn-info btn-block text-uppercase" type="submit">Sign in</button>
+               </form>
+               <div class="form-base">
+                    <p class="footer-text">
+                         <strong class="alert-text">Not registered?</strong><a class="redirect-text" href="#">Sign Up here</a>
+                    </p>
+               </div>
+          </div>
+     </div>
 </div>
 {% endblock %}

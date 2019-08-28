@@ -3,19 +3,16 @@
     width: 100%;
     padding-right: 0px;
     padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
 }
 /*----------------------------------------------------------------------------------------------------------------------Base page---------*/
 
-.navbar{
+.navbar {
     max-height: 100px;
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 700;
+    z-index: 1; 
 }
-
-
 .navbar-brand img {
     max-height: 83px;
     position: absolute;
@@ -33,13 +30,15 @@
 
 .navbar-dark .navbar-nav .nav-link:hover{
     border-bottom: 3px solid #FF69B4;
-    transition: 0.9s;
+    transition: 1s;
     left: 0;
     transition-property: width;
     transition-timing-function: ease-in-out;
 }
-
-.navbar-dark .navbar-nav .nav-link:active{
+.navbar-dark .navbar-nav .show>.nav-link, 
+.navbar-dark .navbar-nav .active>.nav-link, 
+.navbar-dark .navbar-nav .nav-link.show, 
+.navbar-dark .navbar-nav .nav-link.active {
     border-bottom: 3px solid #FF69B4;
 }
 
@@ -138,7 +137,7 @@
     margin-top: 100px;
     margin-bottom: 100px;
 }
-.card{
+.card.card-display{
     box-shadow: 0px 0px 5px 5px #152579;
 }
 .card-deck .card {
@@ -283,4 +282,131 @@
 }
 .webdev-text{
     color: #fff;
+}
+/*-----------------------------------------------------------------------------------------Login Page--------------*/
+.bg-image3{
+    background-image: linear-gradient(
+    rgba(19,19,19,0.1),
+    rgba(19,19,19,0.1)),
+    url(/media/img/handshake.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+    top: 0;
+}
+.login-box{
+    width: 380px;
+    height: 470px;
+    background: rgb(0, 0, 0, 0.5);
+    opacity: 0.7;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    
+}
+
+.form-header{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 900;
+    -webkit-text-stroke: .5px #fff;
+}
+.fieldset{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 900;
+    -webkit-text-stroke: .7px #fff;
+}
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.login-box input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: #fff;
+    outline: none;
+    height: 40px;
+    color: #fff;
+}
+login-box input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background-color: #1c8adb;
+    color: #fff;
+    font-size: 18px;
+}
+
+login-box input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.forgot-pswd{
+    margin-left: 116px;
+    color: #fff;
+}
+.forgot-pswd:hover{
+    color: #1c8adb;
+}
+strong.alert-text{
+    color: #fff;
+}
+a.redirect-text{
+    text-decoration: none;
+    font-size: 14px;
+    color: #32CD32;
+    margin-left: 10px;
+}
+a.redirect-text:hover{
+    color: #f70d1a;
+}
+
+/*-----------------------------------------------------------------------------------------Sign Page--------------*/
+.bg-image4{
+    background-image: linear-gradient(
+    rgba(19,19,19,0.1),
+    rgba(19,19,19,0.1)),
+    url(/media/img/handshake.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 110vh;
+    width: 100%;
+    top: 0;
+}
+
+.signup-box{
+    width: 380px;
+    height: 97vh;
+    background: rgb(0, 0, 0, 0.5);
+    opacity: 0.7;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+}
+p.footer-text{
+    padding: 20px
+}
+.privacy-policy{
+    color: #87ceed;
+}
+.privacy-policy:hover{
+    color: #f70d1a;
 }

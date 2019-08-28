@@ -3,7 +3,7 @@ from django.apps import apps
 from .apps import ServicesConfig
 
 class TestServicesConfig(TestCase):
-    def test_home_app(self):
+    def test_services_app(self):
         self.assertEqual("services", ServicesConfig.name)
         self.assertEqual("services", apps.get_app_config("services").name)
 

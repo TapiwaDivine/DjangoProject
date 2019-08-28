@@ -10,7 +10,8 @@ a.navbar-brand img{
     border-bottom: 3px solid #FF69B4;
     transition: 0.9s;
     left: 0;
-    transition-property: 50%;
+    transition-property: width;
+    width: max-content;
     transition-timing-function: ease-in-out;
 }
 

@@ -5,7 +5,6 @@ from home import views
 def logout(request):
     # For logging users out
     auth.logout(request)
-    print(request)
     messages.success(request, "You have been succcesfully logged out")
     return redirect(reverse('index'))
     
