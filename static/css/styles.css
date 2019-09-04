@@ -1,6 +1,24 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  zoom: 1;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body{
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
 /*----------------------------------------------------------------------------------------------------------------------Global----------*/
 .container-fluid {
     width: 100%;
+    height: auto;
     padding-right: 0px;
     padding-left: 0px;
 }
@@ -328,7 +346,7 @@
 }
 .login-box input{
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: auto;
 }
 .login-box input[type="text"], input[type="password"]
 {
@@ -336,14 +354,14 @@
     border-bottom: 1px solid #fff;
     background: #fff;
     outline: none;
-    height: 40px;
+    height: auto;
     color: #fff;
 }
 login-box input[type="submit"]
 {
     border: none;
     outline: none;
-    height: 40px;
+    height: auto;
     background-color: #1c8adb;
     color: #fff;
     font-size: 18px;
@@ -384,23 +402,35 @@ a.redirect-text:hover{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 110vh;
-    width: 100%;
     top: 0;
+    height: auto;
 }
 
 .signup-box{
     width: 380px;
-    height: 97vh;
     background: rgb(0, 0, 0, 0.5);
     opacity: 0.7;
     color: #fff;
-    top: 50%;
-    left: 50%;
+    height: auto;
+    vertical-align: middle;
+    box-sizing: border-box;
     position: relative;
-    transform: translate(-50%, -50%);
     padding: 20px 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
 }
+input.form-control{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: #fff;
+    outline: none;
+    height: 100%;
+    color: #fff;
+}
+
 p.footer-text{
     padding: 20px
 }
