@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import dj_database_url
+import os.path
 
 if os.environ.get('DEVELOPMENT'):
     development = True
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     'home',
     'services',
     'accounts',
+    'issue_tracker',
 ]
 
 MIDDLEWARE = [

@@ -123,3 +123,41 @@ div.bg-image4{
 div.signup-box {
     height: 90%;
 }
+
+/*---------------------------------------------------------------------------------------------Contact Us Page ----*/
+h1.contactus-header {
+    font-size: 32px;
+}
+p.contactus-text {
+    font-size: 12px;
+}
+
+form.contact-form{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span.contactus-icons {
+    margin-left: 2.7em;
+    margin-right: 2.7em;
+}
+
+div.d-inline-block {
+    padding: 3px;
+}
+h2.socialmedia-links {
+    font-size: 30px
+}
+small.socmed-text {
+    font-size: 9px;    
+}
+
+i.fab {
+    font-size: 24px;
+    color: #fff;
+}
+
+form.bug-form{
+    width: 90%;
+}

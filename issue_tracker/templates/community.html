@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block content %}
+<div class="container-fluid">
+    <div class="bg-image6">
+        <h1 class="comm-header">BECOME AN INSIDER</h1>
+        <hr class="hero">
+        <p class="comm-text">We are here to help!</p>
+        <div class="col text-center">
+             <button type="button"  class="btn btn-danger text-center">Join Now</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="gs-section">
+        <h2 class="gs-header">Get Support</h2>
+        <hr class="section-hr">
+    </div>
+    <div class="card-deck">
+        <div class="card card-comm">
+            <img src="/static/img/bug.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title text-center">Bug Fix</h4>
+                <a href="{% url 'bugform' %}"><button type="button" class="btn btn-outline-danger">Raise Issue</button></a>
+            </div>
+        </div>
+        <div class="card card-comm">
+            <img src="/static/img/eng.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title text-center">New Features</h4>
+                <button class="btn btn-outline-info">Request Features</button>
+            </div>
+        </div>
+        <div class="card card-comm">
+            <img src="/static/img/comp.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title text-center">Get a Website</h4>
+                <button class="btn btn-outline-success">Request Website</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mb-5">
+    <div class="gs-section">
+        <h2 class="gs-header">Issues and Bugs</h2>
+        <hr class="section-hr">
+    </div>
+    {% for bug in bugs %}
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="heading{{ bug.id }}">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ bug.id }}" aria-expanded="false" aria-controls="collapse{{ bug.id }}">{{ bug.title }}</button>
+                </h5>
+            </div>
+            <div id="collapse{{ bug.id }}"  class="collapse" aria-labelledby="heading{{ bug.id }}" data-parent="#accordion">
+                <div class="card-body">
+                    <p>{{ bug.content }}</p>
+                    <a href="{% url 'viewissue' %}">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <a href="{% url 'allissues' %}"><button>See All Issues</button></a>
+</div>
+{% endblock %}

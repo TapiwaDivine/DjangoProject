@@ -60,6 +60,13 @@ html, body{
     border-bottom: 3px solid #FF69B4;
 }
 
+.navbar-dark .navbar-toggler {
+    color: rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.1);
+    float: right;
+    width: fit-content;
+}
+
 .navbar-collapse {
     margin-top: 38px;
     background-color: #1a1a1a;
@@ -85,14 +92,14 @@ html, body{
     color: #0000ff;
 }
 
-/*----------------------------------------------------------------------------------------------------------------------homepage----------*/
+/*--------------------------------------------------------------------homepage----------*/
 
 
 #showcase .bg-image{
     background-image: linear-gradient(
     rgba(19,19,19,0.1),
     rgba(19,19,19,0.1)),
-    url(/media/img/hero.jpeg);
+    url(/static/img/hero.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -111,8 +118,7 @@ html, body{
 
 .hero{
     border: 5px solid #FF69B4;
-    width: 30vw;
-    margin-top: 0px;
+    width: 30%
 }
 .hero-text{
     text-align: center;
@@ -127,7 +133,7 @@ html, body{
     font-size: 20px;
 }
 
-/*---------------------------Services Section---------*/
+/*---------------------------------------------------------------Services Section---------*/
 .section-header{
     text-align: center;
     color: #152579;
@@ -145,8 +151,8 @@ html, body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 41px;
-    max-height: 100px;
-    max-width: 123px;
+    max-height: 90px;
+    max-width: 85px;
 }
 .service-section{
     margin-top: 70px;
@@ -241,13 +247,13 @@ html, body{
 .quotes2{
     color: #152579;
 }
-/*--------------------------------------------------------------------------------------------------------------Services Page---------------*/
+/*--------------------------------------------------------------------Services Page---------------*/
 
 #servicesshowcase .bg-image2{
     background-image: linear-gradient(
     rgba(19,19,19,0.1),
     rgba(19,19,19,0.1)),
-    url(/media/img/laptop.jpg);
+    url(/static/img/laptop.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -301,12 +307,12 @@ html, body{
 .webdev-text{
     color: #fff;
 }
-/*-----------------------------------------------------------------------------------------Login Page--------------*/
+/*---------------------------------------------------------------------Login Page--------------*/
 .bg-image3{
     background-image: linear-gradient(
     rgba(19,19,19,0.1),
     rgba(19,19,19,0.1)),
-    url(/media/img/handshake.jpg);
+    url(/static/img/handshake.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -325,7 +331,6 @@ html, body{
     position: relative;
     transform: translate(-50%, -50%);
     padding: 20px 30px;
-    
 }
 
 .form-header{
@@ -348,15 +353,20 @@ html, body{
     width: 100%;
     margin-bottom: auto;
 }
-.login-box input[type="text"], input[type="password"]
-{
+input#id_remember_me{
+    height: 16px;
+    width: 17px;
+    margin-top: 15px;
+}
+.login-box input[type="text"], input[type="password"] {
     border: none;
     border-bottom: 1px solid #fff;
     background: #fff;
     outline: none;
-    height: auto;
-    color: #fff;
+    height: 45px;
+    color: #000;
 }
+
 login-box input[type="submit"]
 {
     border: none;
@@ -393,12 +403,12 @@ a.redirect-text:hover{
     color: #f70d1a;
 }
 
-/*-----------------------------------------------------------------------------------------Sign Page--------------*/
+/*-----------------------------------------------------------------------Sign Page--------------*/
 .bg-image4{
     background-image: linear-gradient(
     rgba(19,19,19,0.1),
     rgba(19,19,19,0.1)),
-    url(/media/img/handshake.jpg);
+    url(/static/img/handshake.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -422,13 +432,13 @@ a.redirect-text:hover{
     margin-top: 20px;
     
 }
-input.form-control{
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: #fff;
-    outline: none;
-    height: 100%;
-    color: #fff;
+
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 40px;
+    width: 316px;
 }
 
 p.footer-text{
@@ -439,4 +449,169 @@ p.footer-text{
 }
 .privacy-policy:hover{
     color: #f70d1a;
+}
+
+/*---------------------------------------------------------------------Contact Us Page---*/
+
+.bg-image5{
+    background-image: linear-gradient(
+    rgba(19,19,19,0.1),
+    rgba(19,19,19,0.1)),
+    url(/static/img/contactus.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    height: auto;
+}
+.contact-form{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 60px;
+}
+
+.contactus-header {
+    text-align: center;
+    font-size: 48px;
+    color: #fff;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 50px;
+}
+.col-6 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contactus-text {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    -webkit-text-stroke: .5px #fff;
+    
+}
+
+textarea.contact-message{
+    width: 100%;
+    height: 300px;
+}
+.form-label{
+    color: #fff;
+}
+.contactus-icons {
+    color: #152579;
+    font-size: 52px;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+.contacts-title {
+    text-align: center;
+    color: #152579;
+}
+
+.contacts-text {
+    text-align: center;
+    color: #152579;
+}
+/*-------follow us section-----*/
+
+.followus-section{
+    background-color: #152579;
+    padding-bottom: 40px;
+}
+.socialmedia-links{
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    padding-top: 50px;
+    padding-bottom: 20px
+}
+.socmed-text{
+    text-align: center;
+    color: #fff;
+}
+.d-inline-block {
+    padding: 50px;
+}
+.fab {
+    font-size: 46px;
+    color: #fff;
+}
+
+/*------------------------------------------------------------------------Community Page--------*/
+div.bg-image6 {
+    background-image: linear-gradient(
+    rgba(19,19,19,0.1),
+    rgba(19,19,19,0.1)),
+    url(/static/img/communtiy.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+    top: 0;
+}
+.comm-header {
+    text-align: center;
+    font-size: 48px;
+    color: #fff;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 200px;
+}
+.comm-text {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    -webkit-text-stroke: .5px #fff;
+}
+.gs-header{
+    text-align: center;
+    color: #152579;
+    font-size: 40px;
+    margin-top: 50px;
+}
+[class*="btn-outline-"] {
+    margin-left: auto;
+    margin-right: auto;
+}
+.card .card-comm{
+    -webkit-text-stroke: .5px #000;
+}
+/*---------------------------------Issues Section---*/
+
+
+/*-------------------------------------------------------------------bug form page -----------------*/
+.bugform-section{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+input#title-input.form-control{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#descript-input.form-control{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bug-form{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5%;
+}
+.btn-success {
+    color: #fff;
+    background-color: #4BBF73;
+    border-color: #4BBF73;
+    width: 100%;
 }
