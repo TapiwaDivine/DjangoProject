@@ -12,7 +12,10 @@
                </form>
                <div class="form-base">
                     <p class="footer-text">
-                         <strong class="alert-text">Not registered?</strong><a class="redirect-text" href="#">Sign Up here</a>
+                         <strong class="alert-text">Forgot Password?</strong><a class="redirect-text" href="{% url 'password_reset' %}">Reset Password</a>
+                    </p>
+                    <p class="footer-text">
+                         <strong class="alert-text">Not registered?</strong><a class="redirect-text" href="{% url 'signup' %}">Sign Up here</a>
                     </p>
                </div>
           </div>

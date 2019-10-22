@@ -1,16 +1,13 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block content %}
-<div class="container-fluid">
+<div class="container">
     {% for bug in bugs %}
-    <div class="card">
-        <div class="card-header">
-            Featured
-        </div>
+    <div class="card mt-3 mb-3">
         <div class="card-body">
-            <h5 class="card-title">{{ bug.title }}</h5>
+            <h5 class="card-header">{{ bug.title }}</h5>
             <p class="card-text">{{ bug.content }}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="{% url 'viewissue' id=bug.id %}" class="btn btn-primary">View Issue</a>
         </div>
     </div>
     {% endfor %}

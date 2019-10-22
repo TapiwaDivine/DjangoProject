@@ -42,7 +42,7 @@
 </div>
 <div class="container mb-5">
     <div class="gs-section">
-        <h2 class="gs-header">Issues and Bugs</h2>
+        <h2 class="gs-header">Issues Section</h2>
         <hr class="section-hr">
     </div>
     {% for bug in bugs %}
@@ -56,7 +56,7 @@
             <div id="collapse{{ bug.id }}"  class="collapse" aria-labelledby="heading{{ bug.id }}" data-parent="#accordion">
                 <div class="card-body">
                     <p>{{ bug.content }}</p>
-                    <a href="{% url 'viewissue' %}">Read more</a>
+                    <a href="{% url 'viewissue' id=bug.id %}" class="btn btn-primary">Read more</a>
                 </div>
             </div>
         </div>

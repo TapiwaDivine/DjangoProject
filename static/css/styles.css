@@ -14,7 +14,9 @@ html, body{
     padding: 0px;
     overflow-x: hidden;
 }
-
+.alert{
+    margin-bottom: 0;
+}
 /*----------------------------------------------------------------------------------------------------------------------Global----------*/
 .container-fluid {
     width: 100%;
@@ -143,7 +145,7 @@ html, body{
 
 .section-hr {
     width: 10%;
-    border: 2px solid #152579;
+    border: 1px solid #152579;
 }
 
 .card-img-top {
@@ -614,4 +616,15 @@ input#title-input.form-control{
     background-color: #4BBF73;
     border-color: #4BBF73;
     width: 100%;
+}
+/*--------------------------------------------------------------------Bugview page--------------*/
+#bugcardimg.card-img-top {
+    margin-top: 20%;
+    margin-left: 25%;
+    max-height: 40px;
+    max-width: 40px;
+}
+#bugcardimg.card-title {
+    color: #1f9bcf;
+    margin-top: 24px
 }

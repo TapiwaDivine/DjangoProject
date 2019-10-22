@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
+{% block page_title %} {{ user }}'s Profile {% endblock %}
 {% block content %}
-<h1>
-    Am here
-</h1>
+<div class="container">
+    <h1>{{ user.username }}</h1>
+    <h3>Personal Profile</h3>
+    <img src="{{ user.profile.image.url }}" alt="profile-picture" border="0" />
+    <h4>Bio</h4>
+    <p>{{ user.profile.bio.url }}</p>
 {% endblock %}

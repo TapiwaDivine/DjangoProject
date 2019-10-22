@@ -13,7 +13,7 @@ class Bug(models.Model):
     content = models.TextField(null=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
-    # published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     # votes = models.ManyToManyField(User, blank=True, related_name="votes")
     # number_of_likes = models.IntegerField(default=0)
     # comments_count = models.IntegerField(default=0)

@@ -16,10 +16,11 @@ class UserRegistrationForm(UserCreationForm):
                                 widget=forms.PasswordInput)
     password2 = forms.CharField(label="Password Confirmation", 
                                 widget=forms.PasswordInput)
+    email = forms.EmailField()
     
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username', 'password1', 'password2']
+        fields = ['first_name', 'last_name', 'username', 'email' ,'password1', 'password2']
         
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -39,3 +40,10 @@ class UserRegistrationForm(UserCreationForm):
             raise ValidationError("Passwords must match")
             
         return password2
+        
+# class UserUpdateForm(forms.ModelForm):
+#     email = forms.EmailField()
+    
+#     class Meta:
+#         model = User
+#         fields = ['username', 'email' ,'password1']

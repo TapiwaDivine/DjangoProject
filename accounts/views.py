@@ -4,6 +4,7 @@ from home import views
 from django.contrib.auth.decorators import login_required
 from accounts.forms import UserLoginForm
 from django.contrib.auth.models import User
+from .models import Profile
 from accounts.forms import UserLoginForm, UserRegistrationForm
 
 @login_required
@@ -26,6 +27,7 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You're succefully logged in!")
+                return redirect(reverse('index'))
             else:
                 login_form.add_error(None, "Your username or password is incorrect!")
     else:
@@ -57,6 +59,8 @@ def registration(request):
         registartion_form = UserRegistrationForm()
     return render(request, "signup.html", {"signup_form": registartion_form})
     
+@login_required
 def user_profile(request):
+    #Profile page for users
     user = User.objects.get(email=request.user.email)
-    return render(request, "profile.html", {"profile": user_profile})
+    return render(request, "profile.html", {"profile": user})

@@ -19,7 +19,7 @@ from django.views.generic import RedirectView
 from django.views.static import serve
 from .settings import MEDIA_ROOT
 from home import urls as urls_home
-from services import urls
+from services import urls as services_urls
 from issue_tracker import urls as issues_urls
 from accounts import urls as accounts_urls
  
@@ -28,9 +28,9 @@ from accounts import urls as accounts_urls
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', RedirectView.as_view(url='home/')),
-    url(r'home/', include('home.urls')),
-    url(r'^services/', include('services.urls')),
+    url(r'^home/', include('home.urls')),
+    url(r'^services/', include(services_urls)),
     url(r'^issue_tracker/', include(issues_urls)),
-    url(r'accounts/', include(accounts_urls)),
+    url(r'^accounts/', include(accounts_urls)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ]
