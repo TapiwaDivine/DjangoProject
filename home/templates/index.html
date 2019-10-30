@@ -1,6 +1,4 @@
-{% extends 'base.html'%}
-{% load static from staticfiles %}
-{% block content %}
+{% extends 'base.html'%} {% load static from staticfiles %} {% block content %}
 <div class="container-fluid">
     <section id="showcase">
         <div class="bg-image">
@@ -8,7 +6,7 @@
             <hr class="hero">
             <p class="hero-text">Free bug fixes for all our clients and irresistible price for additional features</p>
             <div class="col text-center">
-                 <button type="button"  class="btn btn-danger text-center">Sign Up</button>
+                <a href="{% url 'signup' %}"><button type="button"  class="btn btn-danger text-center">Sign Up</button></a>
             </div>
         </div>
     </section>
@@ -57,7 +55,8 @@
                 <div class="review1-text">
                     <h6 class="client-name">Mia O'Sullivan</h6>
                     <br>
-                    <p class="quotes">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae similique ad in accusantium quo assumenda expedita. Ratione eum dolor maiores consequuntur et, natus necessitatibus laudantium provident ab eligendi amet rerum, vitae quo, at quas in eveniet odio labore expedita esse nam! Quod necessitatibus dolorem dolore provident harum quis eius voluptatibus."</p>
+                    <p class="quotes">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae similique ad in accusantium quo assumenda expedita. Ratione eum dolor maiores consequuntur et, natus necessitatibus laudantium provident ab eligendi amet rerum,
+                        vitae quo, at quas in eveniet odio labore expedita esse nam! Quod necessitatibus dolorem dolore provident harum quis eius voluptatibus."</p>
                 </div>
             </div>
         </div>
@@ -69,7 +68,8 @@
                 <div class="review2-text">
                     <h6 class="client-name2">Micheal Smith</h6>
                     <br>
-                    <p class="quotes2">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae similique ad in accusantium quo assumenda expedita. Ratione eum dolor maiores consequuntur et, natus necessitatibus laudantium provident ab eligendi amet rerum, vitae quo, at quas in eveniet odio labore expedita esse nam! Quod necessitatibus dolorem dolore provident harum quis eius voluptatibus."</p>
+                    <p class="quotes2">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae similique ad in accusantium quo assumenda expedita. Ratione eum dolor maiores consequuntur et, natus necessitatibus laudantium provident ab eligendi amet rerum,
+                        vitae quo, at quas in eveniet odio labore expedita esse nam! Quod necessitatibus dolorem dolore provident harum quis eius voluptatibus."</p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -87,7 +87,8 @@
                 <div class="review1-text">
                     <h6 class="client-name">Jane Doe</h6>
                     <br>
-                    <p class="quotes">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae similique ad in accusantium quo assumenda expedita. Ratione eum dolor maiores consequuntur et, natus necessitatibus laudantium provident ab eligendi amet rerum, vitae quo, at quas in eveniet odio labore expedita esse nam! Quod necessitatibus dolorem dolore provident harum quis eius voluptatibus."</p>
+                    <p class="quotes">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae similique ad in accusantium quo assumenda expedita. Ratione eum dolor maiores consequuntur et, natus necessitatibus laudantium provident ab eligendi amet rerum,
+                        vitae quo, at quas in eveniet odio labore expedita esse nam! Quod necessitatibus dolorem dolore provident harum quis eius voluptatibus."</p>
                 </div>
             </div>
         </div>

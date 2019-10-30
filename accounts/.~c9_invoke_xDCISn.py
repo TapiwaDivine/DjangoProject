@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from home import views
 from django.contrib.auth.decorators import login_required
@@ -35,7 +35,7 @@ def login(request):
     return render(request, "login.html", {"login_form": login_form})
     
 def registration(request):
-    # this function is for registering users
+    # return signup page
     if request.user.is_authenticated:
         return redirect(reverse('index'))
         
@@ -50,7 +50,7 @@ def registration(request):
             
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "You have successfully been registered")
+                messages.success(request, "You have succefully been registered")
                 return redirect(reverse('index'))
     
             else:
@@ -61,30 +61,6 @@ def registration(request):
     
 @login_required
 def user_profile(request):
-    user_info = Profile.objects.get(user=request.user)
-    return render(request, "profile.html", {"user_info": user_info})
-
-@login_required
-def edit_profile(request):
-    if request.method == 'POST':
-        u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form = ProfileUpdateForm(request.POST, 
-                                   request.FILES,
-                                   instance=request.user.profile)
-                                   
-        if u_form.is_valid() and p_form.is_valid():
-            u_form.save()
-            p_form.save()
-            messages.success(request, f'Your Profile has been updated')
-            return redirect('profile')
-            
-    else:
-        u_form = UserUpdateForm(instance=request.user)
-        p_form = ProfileUpdateForm(instance=request.user.profile)
-    
-    context = {
-        'u_form': u_form,
-        'p_form': p_form
-    }
-    return render(request, "edit_profile.html", context)
+    u_form = Us
+    return render(request, "profile.html")
 

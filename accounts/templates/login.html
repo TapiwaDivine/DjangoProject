@@ -1,22 +1,21 @@
-{% extends 'base.html' %}
-{% load static from staticfiles %}
-{% block content %}
+{% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
 <div class="container-fluid">
      <div class="bg-image3">
-          <div class="login-box">
-               <h1 class="form-header">Login </h1>
-               <form method="POST">
-                    {% csrf_token %}
-                    {{ login_form.as_p }}
-                    <button class="btn btn-info btn-block text-uppercase" type="submit">Sign in</button>
-               </form>
-               <div class="form-base">
-                    <p class="footer-text">
-                         <strong class="alert-text">Forgot Password?</strong><a class="redirect-text" href="{% url 'password_reset' %}">Reset Password</a>
-                    </p>
-                    <p class="footer-text">
-                         <strong class="alert-text">Not registered?</strong><a class="redirect-text" href="{% url 'signup' %}">Sign Up here</a>
-                    </p>
+          <div class="row">
+               <div class="login-box mt-5 mb-5">
+                    <h1 class="form-header">Login </h1>
+                    <form method="POST">
+                         {% csrf_token %} {{ login_form.as_p }}
+                         <button class="btn btn-info btn-block text-uppercase" type="submit">Sign in</button>
+                    </form>
+                    <div class="form-base">
+                         <p class="footer-text">
+                              <strong class="alert-text">Forgot Password?</strong><a class="redirect-text" href="{% url 'password_reset' %}">Reset Password</a>
+                         </p>
+                         <p class="footer-text">
+                              <strong class="alert-text">Not registered?</strong><a class="redirect-text" href="{% url 'signup' %}">Sign Up here</a>
+                         </p>
+                    </div>
                </div>
           </div>
      </div>

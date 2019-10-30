@@ -1,11 +1,29 @@
-{% extends 'base.html' %}
-{% load static from staticfiles %}
-{% block page_title %} {{ user }}'s Profile {% endblock %}
-{% block content %}
-<div class="container">
-    <h1>{{ user.username }}</h1>
-    <h3>Personal Profile</h3>
-    <img src="{{ user.profile.image.url }}" alt="profile-picture" border="0" />
-    <h4>Bio</h4>
-    <p>{{ user.profile.bio.url }}</p>
+{% extends 'base.html' %} {% load static from staticfiles %} {% block page_title %} {{ user }}'s Profile {% endblock %} {% block content %}
+<div class="container-fluid">
+    <div class="user-profile">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="user_prof_heading">Personal Profile</h3>
+                <img src="{{ user.profile.image.url }}" class="profile-img" alt="profile-picture" border="0" />
+            </div>
+            <div class="col-md-4">
+                <h4 class="profile-name">Username: {{ user.username }}</h4>
+                <p class="profile-info">Email Address: {{ user.email }}</p>
+                <p class="profile-info">{{ user.first_name }}</p>
+                <p class="profile-info">{{ user.last_name }}</p>
+                <p class="profile-info"> Age: {{user_info.age}}</p>
+                <p class="profile-info">Gender: {{user_info.gender}}</p>
+                <p class="profile-info">City/Country: {{user_info.location}}</p>
+                <p class="profile-info">Bio: {{user_info.bio}}</p>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <a href="{% url 'edit_profile' %}" class="btn btn btn-outline-info" id="edit-pro">
+                <i class="fas fa-pen"></i> Edit Profile
+            </a>
+        </div>
+
+    </div>
+</div>
 {% endblock %}
