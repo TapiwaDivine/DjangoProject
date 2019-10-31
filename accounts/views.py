@@ -37,13 +37,13 @@ def login(request):
 def registration(request):
     # this function is for registering users
     if request.user.is_authenticated:
-        return redirect(reverse('index'))
+        return redirect(reverse('profile'))
         
     if request.method == "POST":
-        registartion_form = UserRegistrationForm(request.POST)
+        registration_form = UserRegistrationForm(request.POST)
         
-        if registartion_form.is_valid():
-            registartion_form.save()
+        if registration_form.is_valid():
+            registration_form.save()
             
             user = auth.authenticate(username=request.POST['username'],
                                      password=request.POST['password1'])
@@ -51,13 +51,13 @@ def registration(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully been registered")
-                return redirect(reverse('index'))
+                return redirect(reverse('profile'))
     
             else:
                 messages.error(request, " Unable to register your account at this time")
     else:
-        registartion_form = UserRegistrationForm()
-    return render(request, "signup.html", {"signup_form": registartion_form})
+        registration_form = UserRegistrationForm()
+    return render(request, "signup.html", {"signup_form": registration_form})
     
 @login_required
 def user_profile(request):
@@ -87,4 +87,3 @@ def edit_profile(request):
         'p_form': p_form
     }
     return render(request, "edit_profile.html", context)
-

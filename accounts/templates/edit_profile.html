@@ -9,9 +9,7 @@
             <div class="col-md-8">
                 <form id="update_profile" method="POST" enctype="multipart/form-data">
                     {% csrf_token %} {{ u_form.as_p }} {{ p_form.as_p }}
-                    <a href="{% url 'edit_profile' %}" class="btn btn btn-outline-info" id="edit-pro">
-                        <i class="far fa-paper-plane"></i> Update Profile
-                    </a>
+                    <a><button class="btn btn btn-outline-info" type="submit" id="edit-pro"><i class="far fa-paper-plane"></i> Update Profile</button></a>
                 </form>
             </div>
         </div>

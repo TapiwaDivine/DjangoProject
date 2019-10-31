@@ -34,7 +34,7 @@ urlpatterns = [
     url(r'^services/', include(services_urls)),
     url(r'^issue_tracker/', include(issues_urls)),
     url(r'^accounts/', include(accounts_urls)),
-    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
+    #url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ] 
 
 if settings.DEBUG:
