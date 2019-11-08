@@ -26,6 +26,7 @@ def login(request):
                                      password=request.POST['password'])
             if user:
                 auth.login(user=user, request=request)
+                request.session["user"] = user.id
                 messages.success(request, "You're succefully logged in!")
                 return redirect(reverse('index'))
             else:

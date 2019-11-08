@@ -1,22 +1,11 @@
-{% extends 'base.html' %}
-{% load static from staticfiles %}
-{% block content %}
-<div class="container">
-  <div class="card mt-5 mb-3" id="card{{ bug.id }}">
-    <div class="row">
-      <div class="col-md-1">
-        <img src="/static/img/bbug.png" class="card-img-top" id="bugcardimg" alt="Bug Image Avatar">
-      </div>
-      <div class="col-md-9">
-        <h3 class="card-title" id="bugcardimg">{{ bug.title }}</h3>
-      </div>
-    </div>
-    <div class="card-body">
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      <form class="comments">
-        <input type="text" class="form-control" id="comm" name="comment"/>
-        <button class="btn btn-info">Submit<i class="far fa-paper-plane"></i></button>
+{% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
+<div class="container-fluid">
+  <div class="bg-image3">
+    <div class="bugform-section">
+      <h1 class="form-header">Issue Submission Ticket</h1>
+      <form class="bug-form" method="POST">
+        {% csrf_token %} {{ form.as_p }}
+        <button class="btn btn-success" type="submit">Submit</button>
       </form>
     </div>
   </div>

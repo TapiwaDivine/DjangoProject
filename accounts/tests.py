@@ -10,17 +10,17 @@ class TestAccountsConfig(TestCase):
         
 class TestViews(TestCase):
     def test_login_page(self):
-        page = self.client.get("/accounts/login")
+        page = self.client.get("/accounts/login/")
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "login.html")
     
     def test_signup_page(self):
-        page = self.client.get("/accounts/signup")
+        page = self.client.get("/accounts/signup/")
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "signup.html")
-        
-class ProfileTests(TestCase):
     
-    def test_str(self):
-        test_name = Profile.user(username="A profile")
-        self.assertEqual(str(test_name), 'An profile')
+    def test_profile_page(self):
+        page = self.client.get("/accounts/profile/")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "profile.html")
+        

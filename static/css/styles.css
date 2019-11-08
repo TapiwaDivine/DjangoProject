@@ -680,9 +680,7 @@ input#title-input.form-control {
 
 /*--------------------------------------------------------------------Bugview page--------------*/
 
-#bugcardimg.card-img-top {
-    margin-top: 5%;
-    margin-left: 7%;
+img#bugcardimg.card-img-top {
     max-height: 40px;
     max-width: 40px;
 }
