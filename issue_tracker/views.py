@@ -63,3 +63,20 @@ def edit_issue(request, id):
     }
    
     return render(request, 'edit_issue.html', context)
+    
+@login_required()
+def delete_issue(request, id):
+    del_bug = get_object_or_404(Bug, pk=id)
+    
+    try:
+        if request.user == del_bug.user:
+            del_bug.delete()
+            messages.success(request, 'Issue has been deleted successfully')
+    except Exception as e:
+        messages.warning(request, 'Issue Could not be deleted: Error{}'.format(e))
+    
+    context = {
+        'del_bug': del_bug
+    }
+    
+    return redirect(reverse(request, 'community.html', context))
