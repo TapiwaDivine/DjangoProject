@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.http import HttpResponseRedirect
+from django.views.generic import ListView
+from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
 from .forms import BugCreationForm
 from django.contrib import messages
@@ -33,7 +34,7 @@ def bug_form_page(request):
             form.instance.author = request.user
             messages.success(request, "Your Issue has been Submitted!")
             form.save()
-            return redirect(reverse('viewissue'))
+            return redirect(reverse('allissues'))
     else:
         form = BugCreationForm() 
     return render(request, 'bugform.html', {"bug_form": form})
@@ -66,11 +67,16 @@ def edit_issue(request, id):
 @login_required()
 def delete_issue(request, id):
     del_bug = get_object_or_404(Bug, pk=id)
-    if request.user == del_bug.author:
+    if request.user.username == del_bug.author:
         del_bug.delete()
         messages.success(request, 'Issue has been deleted successfully')
-        return redirect(reverse('allissues'))
+        return HttpResponseRedirect('display_allbugs.html')
     else:
-        messages.error(request, 'You are not allowed to delete this Issue')
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        return HttpResponseForbidden()
+    return view_bug_details
     
+
+    
+  
+
+   

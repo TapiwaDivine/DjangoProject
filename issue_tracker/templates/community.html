@@ -47,9 +47,17 @@
     <div id="accordion">
         <div class="card">
             <div class="card-header" id="heading{{ bug.id }}">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ bug.id }}" aria-expanded="false" aria-controls="collapse{{ bug.id }}">{{ bug.title }}</button>
-                </h5>
+                <table>
+                    <tr class="table-active">
+                        <td>
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ bug.id }}" aria-expanded="false" aria-controls="collapse{{ bug.id }}">{{ bug.title }}</button>
+                            </h5>
+                        </td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </table>
             </div>
             <div id="collapse{{ bug.id }}" class="collapse" aria-labelledby="heading{{ bug.id }}" data-parent="#accordion">
                 <div class="card-body">
