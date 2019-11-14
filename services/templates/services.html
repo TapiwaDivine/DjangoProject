@@ -54,8 +54,10 @@
         <div class="card">
             <div class="card-header" id="heading{{ feature.id }}">
                 <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ feature.id }}" aria-expanded="false" aria-controls="collapse{{ bug.id }}">{{ feature.title }}</button>
-                    <span class="badge badge-info" style="margin-left: 40%">{{ feature.status }}</span>
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ feature.id }}" aria-expanded="false" aria-controls="collapse{{ bug.id }}">{{ feature.title }}</button> {% if feature.status == "to do" %}
+                    <span class="badge badge-danger" style="margin-left: 40%">{{ feature.status }}</span> {% elif feature.status == "doing" %}
+                    <span class="badge badge-warning" style="margin-left: 40%">{{ feature.status }}</span> {% else %}
+                    <span class="badge badge-success" style="margin-left: 40%">{{ feature.status }}</span> {% endif %}
                     <small class="text-muted" style="margin-left: 5%">{{ feature.author }}</small>
                 </h5>
             </div>

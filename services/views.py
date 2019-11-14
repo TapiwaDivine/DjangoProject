@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from .forms import FeatureCreationForm
+from .forms import FeatureCreationForm, CommentForm
 from django.contrib import messages
 from .models import Feature
+from accounts.models import Profile
 
 def get_services_page(request):
     # display services page and render features requested on Services page
@@ -14,11 +15,28 @@ def render_all_features(request):
     # function to display all features a on single page
     feature_view = Feature.objects.all()
     return render(request, 'display_allfeatures.html', {'features': feature_view})
-
+    
+@login_required
 def view_feature_details(request, id):
     # function to view one features in detail on a template
     feature = get_object_or_404(Feature, pk=id)
-    return render(request, 'featureview.html', {'feature': feature }) 
+    # this function also creates a comments form on the page
+    if request.method == 'POST':
+         form = CommentForm(request.POST)
+         if form.is_valid():
+             form.instance.author = request.user
+             comment = form.save(commit=False)
+             comment.feature = feature
+             comment.save()
+             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        form = CommentForm()
+    context = {
+        'feature': feature,
+        'c_form': form
+        }
+        
+    return render(request, 'featureview.html', context) 
 
 @login_required
 def create_feature_page(request):
@@ -60,7 +78,7 @@ def edit_feature(request, id):
    
     return render(request, 'edit_feature.html', context)
     
-@login_required()
+@login_required
 def delete_feature(request, id):
     del_feature = get_object_or_404(Feature, pk=id)
     if request.user == del_feature.author:
@@ -70,4 +88,5 @@ def delete_feature(request, id):
     else:
         messages.error(request, 'You are not allowed to delete this Issue')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
     

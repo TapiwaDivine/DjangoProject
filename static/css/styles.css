@@ -188,6 +188,7 @@ body {
     margin-bottom: 30px
 }
 
+
 /*--------------------Reviews Section ---------*/
 
 .reviews-header {
@@ -338,6 +339,15 @@ body {
 .webdev-text {
     color: #fff;
 }
+
+/*---------------Feature view----*/
+
+img.comments-img {
+    max-height: 22px;
+    border-radius: 50%;
+}
+
+
 
 /*---------------------------------------------------------------------Login Page--------------*/
 
@@ -632,11 +642,6 @@ footer-text {
     color: #152579;
     font-size: 40px;
     margin-top: 50px;
-}
-
-[class*="btn-outline-"] {
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .card .card-comm {
