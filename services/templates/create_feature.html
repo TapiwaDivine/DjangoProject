@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
+<div class="container-fluid">
+    <div class="bg-image3">
+        <div class="bugform-section">
+            <h1 class="form-header">Request Feature Form</h1>
+            <form class="bug-form" method="POST">
+                {% csrf_token %} {{ f_form.as_p }}
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

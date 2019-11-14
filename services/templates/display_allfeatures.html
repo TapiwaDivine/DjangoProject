@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
+<div class="container">
+    {% for feature in features %}
+    <div class="card mt-3 mb-3">
+        <div class="card-body">
+            <h5 class="card-header">{{ feature.title }}
+                <span class="badge badge-primary">{{ feature.status }}</span>
+            </h5>
+            <p class="card-text">{{ feature.content }}</p>
+            <a href="{% url 'featureview' id=feature.id %}" class="btn btn-primary">View Feature</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

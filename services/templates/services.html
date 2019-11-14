@@ -44,4 +44,32 @@
     </div>
     </section>
 </div>
+<div class="container mb-5">
+    <div class="gs-section">
+        <h2 class="gs-header">Features Section</h2>
+        <hr class="section-hr">
+    </div>
+    {% for feature in features %}
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="heading{{ feature.id }}">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ feature.id }}" aria-expanded="false" aria-controls="collapse{{ bug.id }}">{{ feature.title }}</button>
+                    <span class="badge badge-info" style="margin-left: 40%">{{ feature.status }}</span>
+                    <small class="text-muted" style="margin-left: 5%">{{ feature.author }}</small>
+                </h5>
+            </div>
+            <div id="collapse{{ feature.id }}" class="collapse" aria-labelledby="heading{{ feature.id }}" data-parent="#accordion">
+                <div class="card-body">
+                    <p>{{ feature.content }}</p>
+                    <a href="{% url 'featureview' id=feature.id %}" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+    <a href="{% url 'allfeatures' %}"><button>See All Features</button></a>
+    <a href="{% url 'request_feature' %}" <button class="issues-btn">Request Feature</button></a>
+</div>
 {% endblock %}

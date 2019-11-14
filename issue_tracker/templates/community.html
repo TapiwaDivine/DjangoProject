@@ -5,7 +5,7 @@
         <hr class="hero">
         <p class="comm-text">We are here to help!</p>
         <div class="col text-center">
-            <button type="button" class="btn btn-danger text-center">Join Now</button>
+            <a href="{% url 'signup' %}"><button type="button" class="btn btn-danger text-center">Join Now</button></a>
         </div>
     </div>
 </div>
@@ -26,7 +26,7 @@
             <img src="/static/img/eng.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-title text-center">New Features</h4>
-                <button class="btn btn-outline-info">Request Features</button>
+                <a href="{% url 'request_feature' %}" <button class="btn btn-outline-info">Request Features</button></a>
             </div>
         </div>
         <div class="card card-comm">
@@ -47,17 +47,11 @@
     <div id="accordion">
         <div class="card">
             <div class="card-header" id="heading{{ bug.id }}">
-                <table>
-                    <tr class="table-active">
-                        <td>
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ bug.id }}" aria-expanded="false" aria-controls="collapse{{ bug.id }}">{{ bug.title }}</button>
-                            </h5>
-                        </td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                </table>
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ bug.id }}" aria-expanded="false" aria-controls="collapse{{ bug.id }}">{{ bug.title }}</button>
+                    <span class="badge badge-info" style="margin-left: 40%">{{ bug.status }}</span>
+                    <small class="text-muted" style="margin-left: 5%">{{ bug.author }}</small>
+                </h5>
             </div>
             <div id="collapse{{ bug.id }}" class="collapse" aria-labelledby="heading{{ bug.id }}" data-parent="#accordion">
                 <div class="card-body">

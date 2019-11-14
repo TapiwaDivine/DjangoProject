@@ -3,7 +3,9 @@
     {% for bug in bugs %}
     <div class="card mt-3 mb-3">
         <div class="card-body">
-            <h5 class="card-header">{{ bug.title }}</h5>
+            <h5 class="card-header">{{ bug.title }}
+                <span class="badge badge-primary">{{ bug.status }}</span>
+            </h5>
             <p class="card-text">{{ bug.content }}</p>
             <a href="{% url 'viewissue' id=bug.id %}" class="btn btn-primary">View Issue</a>
         </div>
