@@ -33,3 +33,41 @@ def create_feature_page(request):
     else:
         form = FeatureCreationForm() 
     return render(request, 'create_feature.html', {"f_form": form})
+    
+@login_required
+def edit_feature(request, id):
+    feature = get_object_or_404(Feature, pk=id)
+    if request.method == 'POST':
+        if request.user == feature.author:
+            form = FeatureCreationForm(request.POST, instance=feature)
+            try:
+                if form.is_valid():
+                    form.save()
+                    messages.success(request, 'Feature has been updated')
+                    return redirect('community')
+            except Exception as e:
+                messages.warning(request, 'Update error: {}'.format(e))
+        else:
+            messages.warning(request, 'You cannot make changes this document you need to be the author')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        form = FeatureCreationForm(instance=feature)
+    
+    context = {
+        'form': form,
+        'feature': feature
+    }
+   
+    return render(request, 'edit_feature.html', context)
+    
+@login_required()
+def delete_feature(request, id):
+    del_feature = get_object_or_404(Feature, pk=id)
+    if request.user == del_feature.author:
+        del_feature.delete()
+        messages.success(request, 'Feature has been deleted successfully')
+        return redirect(reverse('allfeatures'))
+    else:
+        messages.error(request, 'You are not allowed to delete this Issue')
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    
