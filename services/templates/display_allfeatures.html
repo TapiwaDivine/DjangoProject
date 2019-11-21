@@ -3,11 +3,13 @@
     {% for feature in features %}
     <div class="card mt-3 mb-3">
         <div class="card-body">
-            <h5 class="card-header">{{ feature.title }}
-                <span class="badge badge-primary">{{ feature.status }}</span>
+            <h5 class="card-header">{{ feature.title }} {% if feature.status == "to do" %}
+                <span class="badge badge-danger">{{ feature.status }}</span> {% elif feature.status == "doing" %}
+                <span class="badge badge-warning">{{ feature.status }}</span> {% else %}
+                <span class="badge badge-success">{{ feature.status }}</span> {% endif %}
             </h5>
             <p class="card-text">{{ feature.content }}</p>
-            <a href="{% url 'featureview' id=feature.id %}" class="btn btn-primary">View Feature</a>
+            <a href="{% url 'featureview' id=feature.id %}" class="btn btn-info">view more</a>
         </div>
     </div>
     {% endfor %}

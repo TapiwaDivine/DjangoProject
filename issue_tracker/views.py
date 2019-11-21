@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
+from django.views.generic import RedirectView
 from django.contrib.auth.decorators import login_required
-from .forms import BugCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import BugCreationForm, CommentForm
 from django.contrib import messages
-from .models import Bug
+from .models import Bug, Comment
 
 def render_contact_us_page(request):
     #this function is for rendering contact_us html file
@@ -19,11 +21,38 @@ def render_all_bugs(request):
     bug_view = Bug.objects.all()
     return render(request, 'display_allbugs.html', {'bugs': bug_view})
 
+@login_required
 def view_bug_details(request, id):
     # function to view one issue in detail on a template
     bug = get_object_or_404(Bug, pk=id)
-    return render(request, 'bugview.html', {'bug': bug}) 
-
+     # this function also creates a comments form on the page
+    if request.method == 'POST':
+         form = CommentForm(request.POST)
+         if form.is_valid():
+             form.instance.author = request.user
+             comment = form.save(commit=False)
+             comment.bug = bug
+             comment.save()
+             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        form = CommentForm()
+    context = {
+        'bug': bug,
+        'c_form': form
+        }
+        
+    return render(request, 'bugview.html', context)
+    
+class BugLikeToggle(LoginRequiredMixin, RedirectView):
+    def get_redirect_url(self, *args, **kwargs):
+        id = self.kwargs.get('id')
+        bug = get_object_or_404(Bug, pk=id)
+        user = self.request.user
+       
+        bug.votes.add(user)
+        
+        return redirect('viewissue', id)
+        
 @login_required
 def bug_form_page(request):
     #this function is for creating bugform and display the bugform page

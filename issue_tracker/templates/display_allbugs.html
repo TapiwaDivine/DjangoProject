@@ -3,11 +3,13 @@
     {% for bug in bugs %}
     <div class="card mt-3 mb-3">
         <div class="card-body">
-            <h5 class="card-header">{{ bug.title }}
-                <span class="badge badge-primary">{{ bug.status }}</span>
+            <h5 class="card-header">{{ bug.title }} {% if bug.status == "to do" %}
+                <span class="badge badge-danger">{{ bug.status }}</span> {% elif bug.status == "doing" %}
+                <span class="badge badge-warning">{{ bug.status }}</span> {% else %}
+                <span class="badge badge-success">{{ bug.status }}</span> {% endif %}
             </h5>
             <p class="card-text">{{ bug.content }}</p>
-            <a href="{% url 'viewissue' id=bug.id %}" class="btn btn-primary">View Issue</a>
+            <a href="{% url 'viewissue' id=bug.id %}" class="btn btn-info">view more</a>
         </div>
     </div>
     {% endfor %}

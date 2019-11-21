@@ -5,12 +5,15 @@
       <div class="col-md-1">
         <img src="/static/img/bbug.png" class="card-img-top mt-4 ml-4" id="bugcardimg" alt="Bug Image Avatar">
       </div>
-      <div class="col-md-7">
-        <h2 class="card-title" id="bugcardimg">{{ bug.title }}
-          <span class="badge badge-info">{{ bug.status }}</span>
+      <div class="col-md-6">
+        <h2 class="card-title" id="bugcardimg">{{ bug.title }} {% if bug.status == "to do" %}
+          <span class="badge badge-danger">{{ bug.status }}</span> {% elif bug.status == "doing" %}
+          <span class="badge badge-warning">{{ bug.status }}</span> {% else %}
+          <span class="badge badge-success">{{ bug.status }}</span> {% endif %}
         </h2>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
+        {% if request.user == bug.author %}
         <div class="row">
           <div class="col-md-6">
             <a href="{% url 'edit_issue' bug.id %}" class="btn btn-outline-info mt-4">Edit</a>
@@ -19,19 +22,47 @@
             <a href="{% url 'delete_issue' bug.id %}" class="btn btn-outline-danger mt-4" value="Click">Delete</a>
           </div>
         </div>
+        {% endif %}
       </div>
     </div>
     <div class="card-body">
       <p class="card-text">{{ bug.content }}</p>
-      <p class="card-text"><small class="text-muted">Posted on {{ bug.date_created }}</small></p>
-      <p class="card-text"><small class="text-muted">Posted by {{ bug.author }}</small></p>
-      <form class="comments">
+      <i class="far fa-thumbs-up"></i>
+      <p class="card-text"><small class="text-muted">Posted by {{ bug.date_created }} on {{ bug.author }}</small></p>
+      <p class="card-text"><small class="text-muted">{{ bug.comments.count }} Comments • Likes {{ bug.votes.count }}</small></p>
+      <hr> {% for comment in bug.comments.all %}
+      <div class="row mt-3 mb-3">
+        <div class="col-xs-2 col-sm-2 col-md-2">
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <img src="{{ comment.author.profile.image.url }}" class="comments-img" alt="profile-picture" />
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8">
+              {% if comment.author.profile.user.is_staff %}
+              <span class="card-text"><small class="text-muted">{{ comment.author }}<span class="badge badge-success">ADMIN</span></small>
+              </span>
+              {% else %}
+              <span class="card-text"><small class="text-muted">{{ comment.author }}</small></span> {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-7 col-sm-7 col-md-7">
+          <p class="card-text">{{ comment.text }}</p>
+          <a href="#"><span class="card-text"><small class="text-muted">Edit</small></span></a>
+          <a href="#"><span class="card-text"><small class="text-muted">Delete</small></span></a>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <p class="card-text"><small class="text-muted">Posted on {{ comment.date_created }}</small></p>
+        </div>
+      </div>
+      {% endfor %}
+      <form method='POST'>
         <div class="row">
           <div class="col-xs-10 col-sm-10 col-md-10">
-            <input type="text" class="form-control" id="comm" name="comment" placeholder="comment..." />
+            {% csrf_token %} {{ c_form.as_p }}
           </div>
           <div class="col-xs-2 col-sm-2 col-md-2">
-            <button type="button" class="btn btn-outline-info" style="width: 114px; height: 44px;">Send<i class="fas fa-paper-plane"></i></button>
+            <button type="submit" class="btn btn-outline-info" style="width: 114px; height: 44px;">Send<i class="fas fa-paper-plane"></i></button>
           </div>
         </div>
       </form>

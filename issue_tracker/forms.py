@@ -1,6 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from .models import Bug
+from .models import Bug, Comment
 
 
 class BugCreationForm(forms.ModelForm):
@@ -41,4 +41,23 @@ class BugCreationForm(forms.ModelForm):
         content = self.cleaned_data.get('content')
         if not title and not content:
             raise forms.ValidationError("Please enter Description")
-        
+
+class CommentForm(forms.ModelForm):
+    text = forms.CharField(
+                label="",
+                    widget=forms.Textarea(
+                        attrs={
+                        "id": "comm",
+                        "class": "form-control",
+                        "placeholder": "add comment...",
+                        "rows": 1,
+                        "cols": 200
+                        }
+                    )
+                )
+                            
+
+    class Meta:
+        model = Comment
+        fields = [ 'text', 'i_have_this_too']
+
