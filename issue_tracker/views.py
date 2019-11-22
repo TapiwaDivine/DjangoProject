@@ -43,15 +43,10 @@ def view_bug_details(request, id):
         
     return render(request, 'bugview.html', context)
     
-class BugLikeToggle(LoginRequiredMixin, RedirectView):
-    def get_redirect_url(self, *args, **kwargs):
-        id = self.kwargs.get('id')
-        bug = get_object_or_404(Bug, pk=id)
-        user = self.request.user
-       
-        bug.votes.add(user)
-        
-        return redirect('viewissue', id)
+def like_a_bug_post(request):
+    bug = get_object_or_404(Bug, id=request.POST.get('bug_id'))
+    bug.votes.add(request.user)
+    return HttpResponseRedirect(bug.get_absolute_url())
         
 @login_required
 def bug_form_page(request):

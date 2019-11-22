@@ -1,7 +1,8 @@
+from django.contrib.auth.models import User
 from django.db import models, IntegrityError
 from django.shortcuts import reverse
 from django.utils import timezone
-from django.contrib.auth.models import User
+
 
 TASK_CHOICES = (
     ('to do','TODO'),
@@ -24,6 +25,12 @@ class Bug(models.Model):
 
     def __str__(self):
         return self.title
+        
+    def total_votes(self):
+        return self.votes.count()
+    
+    def get_absolute_url(self):
+        return reverse("viewissue", kwargs={"id": self.id})
 
 class Comment(models.Model):
     bug = models.ForeignKey(Bug, related_name='comments', null=True, on_delete=models.CASCADE)

@@ -2,3 +2,10 @@
 __pycache__/
 .c9/
 db.sqlite3
+issue_tracker/migrations/0011_auto_20191115_0138.py
+issue_tracker/migrations/0012_auto_20191115_0141.py
+issue_tracker/migrations/0013_auto_20191118_1459.py
+issue_tracker/templates/edit-comment.html
+services/migrations/0004_auto_20191114_1604.py
+services/migrations/0005_auto_20191114_1712.py
+services/migrations/0006_auto_20191115_0141.py
