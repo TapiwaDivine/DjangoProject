@@ -1,71 +1,78 @@
 {% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
 <div class="container">
-  <div class="card mt-5 mb-3" id="card{{ bug.id }}">
-    <div class="row">
-      <div class="col-md-1">
-        <img src="/static/img/bbug.png" class="card-img-top mt-4 ml-4" id="bugcardimg" alt="Bug Image Avatar">
-      </div>
-      <div class="col-md-6">
-        <h2 class="card-title" id="bugcardimg">{{ bug.title }} {% if bug.status == "to do" %}
-          <span class="badge badge-danger">{{ bug.status }}</span> {% elif bug.status == "doing" %}
-          <span class="badge badge-warning">{{ bug.status }}</span> {% else %}
-          <span class="badge badge-success">{{ bug.status }}</span> {% endif %}
-        </h2>
-      </div>
-      <div class="col-md-4">
-        {% if request.user == bug.author %}
+    <div class="card mt-5 mb-3" id="card{{ bug.id }}">
         <div class="row">
-          <div class="col-md-6">
-            <a href="{% url 'edit_issue' bug.id %}" class="btn btn-outline-info mt-4">Edit</a>
-          </div>
-          <div class="col-md-6">
-            <a href="{% url 'delete_issue' bug.id %}" class="btn btn-outline-danger mt-4" value="Click">Delete</a>
-          </div>
+            <div class="col-md-1">
+                <img src="/static/img/bbug.png" class="card-img-top mt-4 ml-4" id="bugcardimg" alt="Bug Image Avatar">
+            </div>
+            <div class="col-md-6">
+                <h2 class="card-title" id="bugcardimg">{{ bug.title }} {% if bug.status == "to do" %}
+                    <span class="badge badge-danger">{{ bug.status }}</span> {% elif bug.status == "doing" %}
+                    <span class="badge badge-warning">{{ bug.status }}</span> {% else %}
+                    <span class="badge badge-success">{{ bug.status }}</span> {% endif %}
+                </h2>
+            </div>
+            <div class="col-md-4">
+                {% if request.user == bug.author %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="{% url 'edit_issue' bug.id %}" class="btn btn-outline-info mt-4">Edit</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{% url 'delete_issue' bug.id %}" class="btn btn-outline-danger mt-4" value="Click">Delete</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
         </div>
-        {% endif %}
-      </div>
+        <div class="card-body">
+            <p class="card-text">{{ bug.content }}</p>
+            <p class="card-text"><small class="text-muted">Posted by {{ bug.date_created }} on {{ bug.author }}</small></p>
+            <form action="{% url 'like' %}" method="POST">
+                {% csrf_token %} {% if request.user in bug.votes.all %}
+                <button type="submit" name="bug_id" value="{{ bug.id }}" class="likebtn2"><i class="fa fa-heart"></i> Liked</button> {% else %}
+                <button type="submit" name="bug_id" value="{{ bug.id }}" class="likebtn"><i class="fa fa-heart"></i> Like</button> {% endif %}
+            </form>
+            <p class="card-text"><small class="text-muted">{{ bug.comments.count }} Comments • Likes {{ bug.votes.count }}</small></p>
+            <hr> {% for comment in bug.comments.all %}
+            <div class="row mt-3 mb-3">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="row ml-3">
+                        <img src="{{ comment.author.profile.image.url }}" class="comments-img mr-2" alt="profile-picture" /> {% if comment.author.profile.user.is_staff %}
+                        <span class="card-text mr-2"><small class="text-muted">{{ comment.author }}<span class="badge badge-success ml-1">ADMIN</span></small>
+                        </span>
+                        {% else %}
+                        <span class="card-text mr-2"><small class="text-muted">{{ comment.author }}</small></span> {% endif %}
+                    </div>
+                </div>
+                <div class="col-xs-7 col-sm-7 col-md-7">
+                    {% if comment.i_have_this_too == True %}
+                    <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }}<span class="badge badge-warning" style="color: #fff;"> i have this too</span></p>
+                    <a href="#"><span class="card-text" style="margin-left: 60px; margin-top: 14px;"><small class="text-muted">Edit</small></span></a>
+                    <a href="#"><span class="card-text" style="margin-left: 10px; margin-top: 14px;"><small class="text-muted">Delete</small></span></a> {% else %}
+                    <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }}</p>
+                    <a href="#"><span class="card-text" style="margin-left: 60px; margin-top: 14px;"><small class="text-muted">Edit</small></span></a>
+                    <a href="#"><span class="card-text" style="margin-left: 10px; margin-top: 14px;"><small class="text-muted">Delete</small></span></a> {% endif %}
+                </div>
+
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <p class="card-text">
+                        <small class="text-muted" style="margin-top: 14px;">Posted on {{ comment.date_created }}</small>
+                    </p>
+                </div>
+            </div>
+            <hr> {% endfor %}
+            <form method='POST'>
+                <div class=" row ">
+                    <div class="col-xs-10 col-sm-10 col-md-10 ">
+                        {% csrf_token %} {{ c_form.as_p }}
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 ">
+                        <button type="submit " class="btn btn-outline-info " style="width: 114px; height: 44px; ">Send<i class="fa fa-paper-plane "></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="card-body">
-      <p class="card-text">{{ bug.content }}</p>
-      <form action="{% url 'like' %}" method="POST">
-        {% csrf_token %}
-        <button type="submit" name="bug_id" value={{ bug.id }} style="background-color : blue">Like</button>
-      </form>
-      <p class="card-text"><small class="text-muted">Posted by {{ bug.date_created }} on {{ bug.author }}</small></p>
-      <p class="card-text"><small class="text-muted">{{ bug.comments.count }} Comments • Likes {{ bug.votes.count }}</small></p>
-      <hr> {% for comment in bug.comments.all %}
-      <div class="row mt-3 mb-3">
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <div class="row ml-3">
-            <img src="{{ comment.author.profile.image.url }}" class="comments-img mr-2" alt="profile-picture" /> {% if comment.author.profile.user.is_staff %}
-            <span class="card-text mr-2"><small class="text-muted">{{ comment.author }}<span class="badge badge-success ml-1">ADMIN</span></small>
-            </span>
-            {% else %}
-            <span class="card-text"><small class="text-muted">{{ comment.author }}</small></span> {% endif %}
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-7 col-sm-7 col-md-7">
-        <p class="card-text">{{ comment.text }}</p>
-        <a href="#"><span class="card-text"><small class="text-muted">Edit</small></span></a>
-        <a href="#"><span class="card-text"><small class="text-muted">Delete</small></span></a>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <p class="card-text"><small class="text-muted">Posted on {{ comment.date_created }}</small></p>
-      </div>
-    </div>
-    {% endfor %}
-    <form method='POST'>
-      <div class="row">
-        <div class="col-xs-10 col-sm-10 col-md-10">
-          {% csrf_token %} {{ c_form.as_p }}
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-2">
-          <button type="submit" class="btn btn-outline-info" style="width: 114px; height: 44px;">Send<i class="fas fa-paper-plane"></i></button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
 </div>
 {% endblock %}

@@ -25,6 +25,7 @@ def render_all_bugs(request):
 def view_bug_details(request, id):
     # function to view one issue in detail on a template
     bug = get_object_or_404(Bug, pk=id)
+    is_liked = False
      # this function also creates a comments form on the page
     if request.method == 'POST':
          form = CommentForm(request.POST)
@@ -36,16 +37,30 @@ def view_bug_details(request, id):
              return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         form = CommentForm()
+        
+    is_liked = False
+    if bug.votes.filter(id=request.user.id).exists():
+        is_liked
+    else:
+        is_liked = True 
     context = {
         'bug': bug,
-        'c_form': form
+        'c_form': form,
+        'is_liked': is_liked
         }
         
     return render(request, 'bugview.html', context)
-    
+
+@login_required  
 def like_a_bug_post(request):
     bug = get_object_or_404(Bug, id=request.POST.get('bug_id'))
-    bug.votes.add(request.user)
+    is_liked = False
+    if bug.votes.filter(id=request.user.id).exists():
+        bug.votes.remove(request.user)
+        is_liked
+    else:
+        bug.votes.add(request.user)
+        is_liked = True
     return HttpResponseRedirect(bug.get_absolute_url())
         
 @login_required

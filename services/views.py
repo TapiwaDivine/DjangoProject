@@ -31,13 +31,32 @@ def view_feature_details(request, id):
              return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         form = CommentForm()
+    
+    is_liked = False
+    if feature.votes.filter(id=request.user.id).exists():
+        is_liked
+    else:
+        is_liked = True
+        
     context = {
         'feature': feature,
-        'c_form': form
+        'c_form': form,
+        'is_liked': is_liked
         }
-        
     return render(request, 'featureview.html', context) 
 
+
+def like_a_feature_post(request):
+    feature = get_object_or_404(Feature, id=request.POST.get('feature_id'))
+    is_liked = False
+    if feature.votes.filter(id=request.user.id).exists():
+        feature.votes.remove(request.user)
+        is_liked
+    else:
+        feature.votes.add(request.user)
+        is_liked = True
+    return HttpResponseRedirect(feature.get_absolute_url())
+    
 @login_required
 def create_feature_page(request):
     #this function is for creating features and display the create features form page
