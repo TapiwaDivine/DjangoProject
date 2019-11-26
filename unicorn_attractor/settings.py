@@ -33,7 +33,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = development
 
 ALLOWED_HOSTS = ['64b552378f6a4cbaafb2bd0d5dab3481.vfs.cloud9.us-east-1.amazonaws.com',
-                 os.environ.get('HOSTNAME')]
+                 os.environ.get('HOSTNAME'),
+                 'uni-attractor.herokuapp.com',]
 
 
 # Application definition
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'unicorn_attractor.urls'
@@ -136,7 +138,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
