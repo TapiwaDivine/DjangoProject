@@ -18,6 +18,7 @@ class Feature(models.Model):
     votes = models.ManyToManyField(User, related_name='feature_votes', blank=True)
     comments_count = models.IntegerField(default=0)
     status = models.CharField(max_length=6, choices=TASK_CHOICES, default='to do')
+    price = models.IntegerField(default=0)
     
     def __unicode__(self):
         return self.title

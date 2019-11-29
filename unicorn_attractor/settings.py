@@ -34,7 +34,7 @@ DEBUG = development
 
 ALLOWED_HOSTS = ['64b552378f6a4cbaafb2bd0d5dab3481.vfs.cloud9.us-east-1.amazonaws.com',
                  os.environ.get('HOSTNAME'),
-                 'uni-attractor.herokuapp.com',]
+                 'https://uni-attractor.herokuapp.com/',]
 
 
 # Application definition
@@ -46,10 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_forms_bootstrap',
     'home',
     'services',
     'accounts',
     'issue_tracker',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -136,6 +138,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=9460800',
+}
+
+AWS_STORAGE_BUCKET_NAME = 'tdc-uni-attractor'
+AWS_S3_REGION = 'us-east-1'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+
+AWS_S3_CUSTOM_DOMIAN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3BotoStorage'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
