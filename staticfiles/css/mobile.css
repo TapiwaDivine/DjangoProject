@@ -1,0 +1,163 @@
+a.navbar-brand img{
+    max-height: 70px;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    margin: 0;
+    padding-top: 0;
+}
+.navbar-dark .navbar-nav .show>.nav-link, 
+.navbar-dark .navbar-nav .active>.nav-link, 
+.navbar-dark .navbar-nav .nav-link.show, 
+.navbar-dark .navbar-nav .nav-link.active {
+    width: max-content;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+    border-bottom: 3px solid #FF69B4;
+    transition: 0.9s;
+    left: 0;
+    transition-property: width;
+    width: max-content;
+    transition-timing-function: ease-in-out;
+}
+
+img.footer-logo{
+    height: 380px;
+}
+/*---------------------------------NavMobile--*/
+#showcase div.bg-image {
+    height: 60vh;
+}
+
+h1.hero-header {
+    font-size: 30px;
+}
+
+p.hero-text{
+    font-size: 18px;
+}
+
+div.service-section {
+    margin-top: 0px;
+}
+
+h2.section-header {
+    font-size: 34px;
+    margin-top: 25px;
+}
+
+div.card-deck {
+    margin-top: 31px;
+    margin-bottom: 0px;
+}
+div.card-deck .card {
+    margin-bottom: 24px;
+}
+
+h2.reviews-header {
+    font-size: 34px;
+    margin-top: 0px;
+    padding-top: 40px;
+}
+
+img.reviews-img {
+    height: 200px;
+    margin-top: 20px;;
+}
+
+
+h6.client-name {
+    font-size: 14px;
+}
+
+.quotes {
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+div.review2-text {
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-right: 39px;
+}
+
+div.review1-text {
+    margin-top: 46px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+/*---------------------------------------------------------------ServicesPage--*/
+#servicesshowcase div.bg-image2 {
+    height: 40vh;
+}
+
+p.hero-text2 {
+    font-size: 14px;
+    -webkit-text-stroke: .5px #fff;
+}
+
+img.webdev-img.text-center {
+    max-height: 300px;
+    margin-top: 6vh;
+    margin-right: auto;
+    margin-left: 3vh;
+}
+
+div.bugsection {
+    padding-top: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.webdev-header {
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+/*--------------------------------------------------------------------------------------------Sign UP------------*/
+div.bg-image4{
+    height: 100%;
+}
+
+div.signup-box {
+    height: 90%;
+}
+
+/*---------------------------------------------------------------------------------------------Contact Us Page ----*/
+h1.contactus-header {
+    font-size: 32px;
+}
+p.contactus-text {
+    font-size: 12px;
+}
+
+form.contact-form{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span.contactus-icons {
+    margin-left: 2.7em;
+    margin-right: 2.7em;
+}
+
+div.d-inline-block {
+    padding: 3px;
+}
+h2.socialmedia-links {
+    font-size: 30px
+}
+small.socmed-text {
+    font-size: 9px;    
+}
+
+i.fab {
+    font-size: 24px;
+    color: #fff;
+}
+
+form.bug-form{
+    width: 90%;
+}

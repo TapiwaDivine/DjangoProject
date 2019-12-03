@@ -14,6 +14,7 @@
         <script src="https://kit.fontawesome.com/c378931d12.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+        {% block head_js %} {% endblock head_js %}
         <title>{% block page_title %}{% endblock %}</title>
     </head>
 
@@ -54,6 +55,14 @@
                         <a href="{% url 'signup' %}" class="nav-link {% if url_name == 'signup' %}active{% endif %}">SignUp</a>
                     </li>
                     {% endif %} {% endwith %}
+                    <li class="nav-item">
+                        <a href="{% url 'view_cart' %}" class="nav-link">
+                    		<i class="fa fa-shopping-cart"></i>Cart
+                    		{% if feature_count > 0 %}
+                    			<label class="badge badge-warning">{{ feature_count }}</label>
+                    		{% endif %}
+                    	</a>
+                    </li>
                 </ul>
             </div>
         </nav>

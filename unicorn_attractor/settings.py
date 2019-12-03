@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import env
 import dj_database_url
 import os.path
 
@@ -47,11 +48,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
+    'bootstrapform',
     'home',
     'services',
     'accounts',
     'issue_tracker',
-    'storages'
+    'cart',
+    'search',
+    'checkout',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +84,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'cart.contexts.cart_contents'
             ],
         },
     },
@@ -144,7 +150,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=9460800',
 }
 
-AWS_STORAGE_BUCKET_NAME = 'tdc-uni-attractor'
+AWS_STORAGE_BUCKET_NAME = 'tdc-uniattractor'
 AWS_S3_REGION = 'us-east-1'
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
@@ -159,6 +165,9 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 

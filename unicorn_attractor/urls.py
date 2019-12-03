@@ -24,8 +24,9 @@ from home import urls as urls_home
 from services import urls as services_urls
 from issue_tracker import urls as issues_urls
 from accounts import urls as accounts_urls
- 
-
+from cart import urls as urls_cart
+from search import urls as urls_search 
+from checkout import urls as urls_checkout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -34,6 +35,9 @@ urlpatterns = [
     url(r'^services/', include(services_urls)),
     url(r'^issue_tracker/', include(issues_urls)),
     url(r'^accounts/', include(accounts_urls)),
+    url(r'^cart/', include(urls_cart)),
+    url(r'^checkout/', include(urls_checkout)),
+    url(r'^search/', include(urls_search)),
     #url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ] 
 

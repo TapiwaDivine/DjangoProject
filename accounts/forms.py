@@ -8,7 +8,6 @@ class UserLoginForm(forms.Form):
     #This form is used to login in users
     username = forms.CharField(max_length=35)
     password = forms.CharField(widget=forms.PasswordInput)
-    remember_me = forms.BooleanField(label="Remember Me", required=False, widget=forms.CheckboxInput())
     
 
 class UserRegistrationForm(UserCreationForm):

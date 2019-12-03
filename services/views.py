@@ -20,10 +20,12 @@ def render_all_features(request):
 def view_feature_details(request, id):
     # function to view one features in detail on a template
     feature = get_object_or_404(Feature, pk=id)
+    is_liked = False
     # this function also creates a comments form on the page
     if request.method == 'POST':
          form = CommentForm(request.POST)
          if form.is_valid():
+             print(form)
              form.instance.author = request.user
              comment = form.save(commit=False)
              comment.feature = feature
@@ -31,8 +33,7 @@ def view_feature_details(request, id):
              return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         form = CommentForm()
-    
-    is_liked = False
+
     if feature.votes.filter(id=request.user.id).exists():
         is_liked
     else:
@@ -41,7 +42,7 @@ def view_feature_details(request, id):
     context = {
         'feature': feature,
         'c_form': form,
-        'is_liked': is_liked
+        'is_liked': is_liked,
         }
     return render(request, 'featureview.html', context) 
 

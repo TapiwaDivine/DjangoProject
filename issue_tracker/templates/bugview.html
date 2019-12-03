@@ -47,12 +47,10 @@
                 </div>
                 <div class="col-xs-7 col-sm-7 col-md-7">
                     {% if comment.i_have_this_too == True %}
-                    <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }}<span class="badge badge-warning" style="color: #fff;"> i have this too</span></p>
-                    <a href="#"><span class="card-text" style="margin-left: 60px; margin-top: 14px;"><small class="text-muted">Edit</small></span></a>
-                    <a href="#"><span class="card-text" style="margin-left: 10px; margin-top: 14px;"><small class="text-muted">Delete</small></span></a> {% else %}
+                    <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }} <span class="badge badge-warning" style="color: #fff;"> i have this too</span></p>
+                    {% else %}
                     <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }}</p>
-                    <a href="#"><span class="card-text" style="margin-left: 60px; margin-top: 14px;"><small class="text-muted">Edit</small></span></a>
-                    <a href="#"><span class="card-text" style="margin-left: 10px; margin-top: 14px;"><small class="text-muted">Delete</small></span></a> {% endif %}
+                    {% endif %}
                 </div>
 
                 <div class="col-xs-3 col-sm-3 col-md-3">
@@ -63,7 +61,7 @@
             </div>
             <hr> {% endfor %}
             <form method='POST'>
-                <div class=" row ">
+                <div class="row">
                     <div class="col-xs-10 col-sm-10 col-md-10 ">
                         {% csrf_token %} {{ c_form.as_p }}
                     </div>
