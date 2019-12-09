@@ -8,7 +8,7 @@ colorama==0.4.1
 dj-database-url==0.5.0
 Django==1.11.24
 django-forms-bootstrap==3.1.0
-django-storages==1.6.5 
+django-storages==1.6.5
 docutils==0.15.2
 idna==2.8
 ikp3db==1.4.1
