@@ -92,11 +92,11 @@ def edit_feature(request, id):
         form = FeatureCreationForm(instance=feature)
     
     context = {
-        'form': form,
+        'f_form': form,
         'feature': feature
     }
    
-    return render(request, 'edit_feature.html', context)
+    return render(request, 'create_feature.html', context)
     
 @login_required
 def delete_feature(request, id):
