@@ -18,9 +18,3 @@ class TestViews(TestCase):
         page = self.client.get("/accounts/signup/")
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "signup.html")
-    
-    def test_profile_page(self):
-        page = self.client.get("/accounts/profile/")
-        self.assertEqual(page.status_code, 200)
-        self.assertTemplateUsed(page, "profile.html")
-        
