@@ -1,14 +1,21 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.http import HttpResponseRedirect
-from django.views.generic import RedirectView
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import BugCreationForm, CommentForm
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.views.generic import RedirectView
+from .forms import BugCreationForm, CommentForm
 from .models import Bug, Comment
 
 def render_contact_us_page(request):
     #this function is for rendering contact_us html file
+    if request.method == 'POST':
+        email = request.POST['contactus_email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+         
+        send_mail(email, subject, message, ['tdchipatiko07@gmail.com'], fail_silently=False)
     return render(request, 'contact_us.html')
     
 def display_community_page(request):
@@ -102,7 +109,7 @@ def edit_issue(request, id):
    
     return render(request, 'edit_issue.html', context)
     
-@login_required()
+@login_required
 def delete_issue(request, id):
     del_bug = get_object_or_404(Bug, pk=id)
     if request.user == del_bug.author:

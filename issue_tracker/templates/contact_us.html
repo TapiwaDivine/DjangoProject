@@ -8,18 +8,19 @@
         <div class="col-6">
             <p class="contactus-text"> Get in touch with us if you have any question, query, complaint, feedback, compliment or you just want to say hello, it will mean a lot to us</p>
         </div>
-        <form class="contact-form" method="POST" action="#">
+        <form class="contact-form" method="POST" action="{% url 'contact_us' %}">
+            {% csrf_token %}
             <div class="form-group">
                 <label class="form-label" for="contactus-email">Email address</label>
-                <input type="email" id="contactus-email" class="form-control" placeholder="Email">
+                <input type="email" id="contactus_email" name="contactus_email" class="form-control" placeholder="Email">
             </div>
             <div class="form-group">
                 <label class="form-label" for="subject">Subject</label>
-                <input type="subject" id="subject" class="form-control" placeholder="subject">
+                <input type="subject" id="subject" name="subject" class="form-control" placeholder="subject">
             </div>
             <div class="form-group">
                 <label class="form-label" for="contact-message">Message</label>
-                <textarea class="contact-message"></textarea>
+                <textarea name="message" id="message" class="contact-message"></textarea>
             </div>
             <button class="btn btn-success btn-block text-uppercase" type="submit">Send</button>
        </form>
@@ -66,24 +67,25 @@
         <p class="socmed-text">Like us, Follow us and subscribe to our official social media platforms to stay updated with our latest developments</p>
         <div class="text-center">
             <div class="d-inline-block">
-                <a href="#"><i class="fab fa-linkedin-in"></i><br><small class="socmed-text">Linkedin</small></a>
+                <a href="wwww.linkedin.com"><i class="fab fa-linkedin-in"></i><br><small class="socmed-text">Linkedin</small></a>
             </div>
             <div class="d-inline-block">
-                <a href="#"><i class="fab fa-facebook-f"></i><br><small class="socmed-text">Facebook</small></a>
+                <a href="www.facebook.com"><i class="fab fa-facebook-f"></i><br><small class="socmed-text">Facebook</small></a>
             </div>
             <div class="d-inline-block">
-                <a href="#"><i class="fab fa-twitter"></i><br><small class="socmed-text">Twitter</small></a>
+                <a href="www.twitter.com"><i class="fab fa-twitter"></i><br><small class="socmed-text">Twitter</small></a>
             </div>
             <div class="d-inline-block">
-                <a href="#"><i class="fab fa-instagram"></i><br><small class="socmed-text">Instagram</small></a>
+                <a href="www.instagram.com"><i class="fab fa-instagram"></i><br><small class="socmed-text">Instagram</small></a>
             </div>
             <div class="d-inline-block">
-                <a href="#"><i class="fab fa-youtube"></i><br><small class="socmed-text">YouTube</small></a>
+                <a href="www.youtube.com"><i class="fab fa-youtube"></i><br><small class="socmed-text">YouTube</small></a>
             </div>
             <div class="d-inline-block">
-                <a href="#"><i class="fab fa-pinterest"></i><br><small class="socmed-text">Pinterest</small></a>
+                <a href="www.pinterest.com"><i class="fab fa-pinterest"></i><br><small class="socmed-text">Pinterest</small></a>
             </div>
         </div>
     </div>
 </div>
+
 {% endblock %}

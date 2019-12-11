@@ -38,7 +38,7 @@ DEBUG = development
 
 ALLOWED_HOSTS = ['c48890e5283744e98351c11d19beb6a8.vfs.cloud9.us-east-1.amazonaws.com',
                  os.environ.get('HOSTNAME'),
-                 'https://uni-attractor.herokuapp.com/',]
+                 'uni-attractor.herokuapp.com',]
 
 
 # Application definition
