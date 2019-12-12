@@ -1,4 +1,4 @@
-{% extends 'base.html'%} {% block content %}
+{% extends 'base.html'%} {% load static from staticfiles %} {% block content %}
 <div class="container-fluid">
     <section id="servicesshowcase">
         <div class="bg-image2">
@@ -21,7 +21,7 @@
         </div>
         <div class="col-md-6">
             <div class="bugsection">
-                <img src="/static/img/bugfix.png" class="bugsec-img">
+                <img src="{% static 'img/bugfix.png' %}" class="bugsec-img">
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
     <div class="review1">
         <div class="row">
             <div class="col-md-6">
-                <img src="/static/img/webdev.png" class="webdev-img text-center">
+                <img src="{% static 'img/webdev.png'%}" class="webdev-img text-center">
             </div>
             <div class="col-md-6">
                 <div class="review1-text">

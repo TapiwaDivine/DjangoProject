@@ -1,9 +1,9 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
 <div class="container">
     <div class="card mt-5 mb-3" id="card{{ bug.id }}">
         <div class="row">
             <div class="col-md-1">
-                <img src="/static/img/bbug.png" class="card-img-top mt-4 ml-4" id="bugcardimg" alt="Bug Image Avatar">
+                <img src="{% static 'img/bbug.png'%}" class="card-img-top mt-4 ml-4" id="bugcardimg" alt="Bug Image Avatar">
             </div>
             <div class="col-md-6">
                 <h2 class="card-title" id="bugcardimg">{{ bug.title }} {% if bug.status == "to do" %}

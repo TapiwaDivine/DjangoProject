@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
 <div class="container-fluid">
     <div class="bg-image6">
         <h1 class="comm-header">BECOME AN INSIDER</h1>
@@ -16,21 +16,21 @@
     </div>
     <div class="card-deck">
         <div class="card card-comm">
-            <img src="/static/img/bug.png" class="card-img-top" alt="...">
+            <img src="{% static 'img/bug.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-title text-center">Bug Fix</h4>
                 <a href="{% url 'bugform' %}"><button type="button" class="btn btn-outline-danger">Raise Issue</button></a>
             </div>
         </div>
         <div class="card card-comm">
-            <img src="/static/img/eng.png" class="card-img-top" alt="...">
+            <img src="{% static 'img/eng.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-title text-center">New Features</h4>
                 <a href="{% url 'request_feature' %}" <button class="btn btn-outline-info">Request Features</button></a>
             </div>
         </div>
         <div class="card card-comm">
-            <img src="/static/img/comp.png" class="card-img-top" alt="...">
+            <img src="{% static 'img/comp.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-title text-center">Get a Website</h4>
                 <button class="btn btn-outline-success">Request Website</button>
