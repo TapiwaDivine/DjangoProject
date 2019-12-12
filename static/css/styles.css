@@ -166,13 +166,12 @@ body {
     border: 1px solid #152579;
 }
 
-.card-img-top {
-    width: 70%;
+img.card-img-top {
     margin-left: auto;
     margin-right: auto;
     margin-top: 41px;
-    max-height: 90px;
-    max-width: 85px;
+    height: 70px;
+    width: 80px;
 }
 
 .service-section {
@@ -185,10 +184,9 @@ body {
 }
 
 .card.card-display {
-    box-shadow: 0px 0px 5px 5px #152579;
+    box-shadow: 2px 2px 2px 1px #d3d3d3;
 }
-
-.card-deck .card {
+div.card-deck .card {
     margin-bottom: 30px
 }
 
