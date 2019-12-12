@@ -6,6 +6,8 @@ from accounts.forms import UserLoginForm
 from django.contrib.auth.models import User
 from .models import Profile
 from accounts.forms import UserLoginForm, UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
+from issue_tracker.models import Bug
+from services.models import Feature
 
 @login_required
 def logout(request):
@@ -63,7 +65,14 @@ def registration(request):
 @login_required
 def user_profile(request):
     user_info = Profile.objects.get(user=request.user)
-    return render(request, "profile.html", {"user_info": user_info})
+    logged_in_user_bug = Bug.objects.filter(author=request.user)
+    logged_in_user_feature = Feature.objects.filter(author=request.user)
+    context = {
+        "user_info": user_info,
+        "user_bug": logged_in_user_bug,
+        "user_feature": logged_in_user_feature
+    }
+    return render(request, "profile.html", context)
 
 @login_required
 def edit_profile(request):

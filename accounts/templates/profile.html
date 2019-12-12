@@ -26,4 +26,62 @@
 
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6">
+            <h5>My Requested Features</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if feature %}
+                    <tr>
+                        <td>{{ user_feature.title }}</td>
+                        <td>{{ user_feature.status }}</td>
+                        <td>€{{ user_feature.price }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td> No Feature Requested</td>
+                        <td>None</td>
+                        <td>€0</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+            <h5>My Issues</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if bug %}
+                    <tr>
+                        <td>{{ user_bug.title }}</td>
+                        <td>{{ user_bug.status }}</td>
+                        <td>€{{ user_bug.price }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td> No Issue Fix Requested </td>
+                        <td>None</td>
+                        <td>€0</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}
