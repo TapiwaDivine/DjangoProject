@@ -3,7 +3,6 @@ __pycache__/
 .c9/
 db.sqlite3
 env.py
-accounts/.~c9_invoke_m3lefV.py
 htmlcov/
 .tox/
 .coverage
