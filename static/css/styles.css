@@ -98,6 +98,7 @@ body {
     margin: 0 auto;
     padding-top: 100px;
     padding-bottom: 80px;
+    max-width: 250px
 }
 
 .copyrights {
@@ -203,7 +204,8 @@ div.card-deck .card {
 
 .reviews-hr {
     width: 10%;
-    border: 2px solid #fff;
+    border-top: 2px solid #fff;
+    border: none; 
 }
 
 .reviews-img {
@@ -211,8 +213,8 @@ div.card-deck .card {
     display: block;
     margin: 0 auto;
     border-radius: 50%;
-    height: 230px;
-    margin-top: 70px;
+    height: 200px;
+    margin-top: 50px;
 }
 
 .reviews-section {
@@ -229,7 +231,7 @@ div.card-deck .card {
 
 .review1-hr {
     width: 80%;
-    border: 2px solid #fff;
+    border-top: 5px solid #fff;
     margin-top: 34px;
 }
 

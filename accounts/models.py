@@ -13,7 +13,7 @@ class Profile(models.Model):
     age = models.IntegerField(default=0)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     location = models.CharField(max_length=140, default='')  
-    gender = models.CharField(max_length=6, choices=USER_GENDER, default='undefined')  
+    gender = models.CharField(max_length=12, choices=USER_GENDER, default='')  
     bio = models.CharField(max_length=240, default='')
     
     def __str__(self):
