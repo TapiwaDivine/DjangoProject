@@ -31,11 +31,16 @@ img.footer-logo{
 }
 
 h1.hero-header {
-    font-size: 30px;
+    font-size: 16px;
+    padding-top: 102px
 }
 
-p.hero-text{
-    font-size: 18px;
+.hero {
+    border-top: 3px solid #FF69B4;
+    width: 30%
+}
+p.hero-text {
+    font-size: 8px;
 }
 
 div.service-section {

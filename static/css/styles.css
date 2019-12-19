@@ -114,8 +114,8 @@ body {
 /*--------------------------------------------------------------------homepage----------*/
 
 #showcase .bg-image {
-    background-image: linear-gradient(rgba(128, 128, 128, .5), rgba(128, 128, 128, .5)),
-    url(/static/img/hero.jpeg);
+    background-image: linear-gradient(rgba(20, 20, 234, .5), rgba(20, 20, 234, .5)),
+    url(/static/img/happy.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -123,16 +123,25 @@ body {
     position: relative;
     width: 100%;
     top: 0;
+    filter: drop-shadow(2px 4px 6px blue);
 }
 
-
 .hero-header {
+    text-align: center;
+    font-size: 48px;
+    color: #FF0;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 150px;
+}
+
+.hero-header2 {
     text-align: center;
     font-size: 48px;
     color: #fff;
     font-weight: 900;
     font-family: 'Roboto', sans-serif;
-    padding-top: 150px;
+    padding-top: 15px;
 }
 
 .hero {
@@ -148,13 +157,10 @@ body {
     -webkit-text-stroke: .5px #fff;
     
 }
-
-.btn-danger {
-    padding: 1rem 6rem;
-    border-radius: 40px;
-    font-size: 20px;
+.landingbtn{
+    color: #fff;
+    background-color: #4BB543
 }
-
 /*---------------------------------------------------------------Services Section---------*/
 
 .section-header {
@@ -210,7 +216,6 @@ div.card-deck .card {
     display: block;
     margin: 0 auto;
     border-radius: 50%;
-    float: right;
     height: 200px;
     margin-top: 80px;
 }
