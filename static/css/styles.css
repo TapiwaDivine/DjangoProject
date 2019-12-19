@@ -141,7 +141,7 @@ body {
     color: #fff;
     font-weight: 900;
     font-family: 'Roboto', sans-serif;
-    padding-top: 15px;
+    padding-top: 0px;
 }
 
 .hero {
@@ -152,15 +152,40 @@ body {
 .hero-text {
     text-align: center;
     color: #fff;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 900;
     -webkit-text-stroke: .5px #fff;
     
 }
+hero-txt {
+    text-align: center;
+    color: #ff0;
+    font-size: 18px;
+    font-weight: 900;
+    -webkit-text-stroke: .5px #ff0;
+    
+}
 .landingbtn{
     color: #fff;
-    background-color: #4BB543
+    background-color: #4BB543;
+    width: 250px;
+    border: none;
+    height: 70px;
 }
+.landingbtn:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.landingbtn:hover {
+  padding-right: 25px;
+  opacity: 1;
+  right: 0;
+}
+
 /*---------------------------------------------------------------Services Section---------*/
 
 .section-header {
