@@ -27,14 +27,17 @@ img.footer-logo{
 }
 /*---------------------------------NavMobile--*/
 #showcase div.bg-image {
-    height: 60vh;
+    height: 36vh;
 }
 
 h1.hero-header {
-    font-size: 16px;
-    padding-top: 102px
+    font-size: 14px;
+    padding-top: 85px;
 }
-
+button.landingbtn {
+    width: 220px;
+    height: 45px;
+}
 .hero {
     border-top: 3px solid #FF69B4;
     width: 30%
@@ -67,15 +70,15 @@ h2.reviews-header {
 }
 
 img.reviews-img {
-    height: 200px;
+    height: 140px;
     margin-top: 20px;;
 }
 
 
 h6.client-name {
-    font-size: 14px;
+    font-size: 12px;
+    text-align: center;
 }
-
 .quotes {
     font-size: 12px;
     margin-bottom: 30px;

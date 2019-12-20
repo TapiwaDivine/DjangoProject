@@ -114,7 +114,7 @@ body {
 /*--------------------------------------------------------------------homepage----------*/
 
 #showcase .bg-image {
-    background-image: linear-gradient(rgba(20, 20, 234, .5), rgba(20, 20, 234, .5)),
+    background-image: linear-gradient(rgba(20, 20, 234, .4), rgba(20, 20, 234, .2)),
     url(/static/img/happy.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -165,23 +165,38 @@ hero-txt {
     -webkit-text-stroke: .5px #ff0;
     
 }
-.landingbtn{
+
+.landingbtn {
     color: #fff;
     background-color: #4BB543;
     width: 250px;
     border: none;
+    border-radius: 4px;
     height: 70px;
+    transition: all 0.5s;
+    cursor: pointer;
 }
-.landingbtn:after {
-  content: '\00bb';
+
+.landingbtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.landingbtn span:after {
+  content: '\00BB';
   position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.5s;
 }
-.landingbtn:hover {
+.landingbtn span:hover {
   padding-right: 25px;
+  opacity: 6;
+  right: 0;
+}
+.landingbtn:hover span:after {
   opacity: 1;
   right: 0;
 }
@@ -287,7 +302,7 @@ div.card-deck .card {
 
 .review2-hr {
     width: 80%;
-    border: 2px solid #152579;
+    border-top: 5px solid #152579;
     margin-top: 80px;
 }
 
