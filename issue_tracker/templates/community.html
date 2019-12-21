@@ -43,7 +43,7 @@
     </div>
     {% for bug in bugs %}
     <div id="accordion">
-        <div class="card">
+        <div class="card" {% if bug.status == "to do" %} style="background-color: blanchedalmond" {% elif bug.status == "doing" %} style="background-color: khaki" {% else %}style="background-color: aquamarine" {% endif %}>
             <div class="card-header" id="heading{{ bug.id }}">
                 <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ bug.id }}" aria-expanded="false" aria-controls="collapse{{ bug.id }}">{{ bug.title }}</button> {% if bug.status == "to do" %}
@@ -55,13 +55,13 @@
             </div>
             <div id="collapse{{ bug.id }}" class="collapse" aria-labelledby="heading{{ bug.id }}" data-parent="#accordion">
                 <div class="card-body">
-                    <p>{{ bug.content }}</p>
+                    <p style="color: #000">{{ bug.content }}</p>
                     <a href="{% url 'viewissue' id=bug.id %}" class="btn btn-primary">view more</a>
                 </div>
             </div>
         </div>
     </div>
     {% endfor %}
-    <a href="{% url 'allissues' %}"><button type="button" class="view-all">See All Issues</button></a>
+    <a href="{% url 'allissues' %}"><button type="button" class="view-all">All Issues</button></a>
 </div>
 {% endblock %}

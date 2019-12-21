@@ -51,7 +51,7 @@ div.service-section {
 }
 
 h2.section-header {
-    font-size: 34px;
+    font-size: 20px;
     margin-top: 25px;
 }
 
@@ -64,22 +64,21 @@ div.card-deck .card {
 }
 
 h2.reviews-header {
-    font-size: 34px;
+    font-size: 20px;
     margin-top: 0px;
     padding-top: 40px;
 }
 
-img.reviews-img {
-    height: 140px;
-    margin-top: 20px;;
+img.card-img-top {
+    height: 55px;
+    width: 60px;
 }
-
 
 h6.client-name {
     font-size: 12px;
     text-align: center;
 }
-.quotes {
+p.quotes {
     font-size: 12px;
     margin-bottom: 30px;
 }
@@ -119,11 +118,18 @@ div.bugsection {
     padding-bottom: 30px;
 }
 
-.webdev-header {
+h3.webdev-header {
+    color: #fff;
     margin-bottom: 0px;
     font-size: 20px;
 }
-
+h2.gs-header {
+    font-size: 24px;
+    margin-top: 34px;
+}
+p.bugsection-text {
+    font-size: 12px;
+}
 img.bugsec-img {
     max-height: 150px;
 }
@@ -132,14 +138,14 @@ button.view-all-features{
     margin-left: 20px;
 }
 /*----------------------------------------------------------------------------------------Community Page--------*/
-bg-image6 {
+div.bg-image6 {
     height: 34vh;
 }
-.comm-header {
+h1.comm-header {
     font-size: 21px;
     padding-top: 80px;
 }
-comm-text {
+p.comm-text {
     font-size: 16px;
     font-weight: 500;
 }
@@ -147,7 +153,7 @@ button.btn btn-danger text-center{
     width: 150; 
 }
 /*------------------------------------------------------------------------------------------login page --------*/
-.login-box {
+div.login-box {
     width: 86%;
 }
 /*--------------------------------------------------------------------------------------------Sign UP------------*/

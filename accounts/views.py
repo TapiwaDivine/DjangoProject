@@ -65,8 +65,8 @@ def registration(request):
 @login_required
 def user_profile(request):
     user_info = Profile.objects.get(user=request.user)
-    logged_in_user_bug = Bug.objects.filter(author=request.user)
-    logged_in_user_feature = Feature.objects.filter(author=request.user)
+    logged_in_user_bug = Bug.objects.filter(author=request.user).values()
+    logged_in_user_feature = Feature.objects.filter(author=request.user).values()
     context = {
         "user_info": user_info,
         "user_bug": logged_in_user_bug,

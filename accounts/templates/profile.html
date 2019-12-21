@@ -27,9 +27,9 @@
     </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6">
-            <h5>My Requested Features</h5>
+    <div class="row" style="margin-top: 100px">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h5 class="profissues">My Requested Features</h5>
             <table class="table">
                 <thead>
                     <tr>
@@ -38,8 +38,8 @@
                         <th scope="col">Price</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {% if feature %}
+                <tbody {% if feature.status == "to do" %} style="background-color: blanchedalmond" {% elif feature.status == "doing" %} style="background-color: khaki" {% else %}style="background-color: aquamarine" {% endif %}>
+                    {% if user_feature %}
                     <tr>
                         <td>{{ user_feature.title }}</td>
                         <td>{{ user_feature.status }}</td>
@@ -55,8 +55,8 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-            <h5>My Issues</h5>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 70px; margin-bottom: 40px;">
+            <h5 class="profissues">My Issues</h5>
             <table class="table">
                 <thead>
                     <tr>

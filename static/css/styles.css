@@ -211,7 +211,7 @@ hero-txt {
     margin-top: 50px;
 }
 
-img.card-img-top {
+.card-img-top {
     margin-left: auto;
     margin-right: auto;
     margin-top: 41px;
@@ -342,7 +342,6 @@ div.card-deck .card {
     color: #fff;
     font-size: 22px;
     font-weight: 900;
-    -webkit-text-stroke: .5px #fff;
 }
 
 .bugsection {
@@ -800,6 +799,12 @@ img#bugcardimg.card-img-top {
 #edit-pro {
     margin-left: 8%;
 }
+.profissues {
+    text-align: center;
+    color: #152579;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
 /*--------------------------------------------------------------------------------Cart page---------------------*/
 .noitems {    
     text-align: center;
@@ -809,5 +814,4 @@ img#bugcardimg.card-img-top {
 .noitems-description {
     text-align: center;
     color: #000;
-}
 }
