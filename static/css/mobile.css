@@ -123,6 +123,33 @@ div.bugsection {
     margin-bottom: 0px;
     font-size: 20px;
 }
+
+img.bugsec-img {
+    max-height: 150px;
+}
+
+button.view-all-features{
+    margin-left: 20px;
+}
+/*----------------------------------------------------------------------------------------Community Page--------*/
+bg-image6 {
+    height: 34vh;
+}
+.comm-header {
+    font-size: 21px;
+    padding-top: 80px;
+}
+comm-text {
+    font-size: 16px;
+    font-weight: 500;
+}
+button.btn btn-danger text-center{
+    width: 150; 
+}
+/*------------------------------------------------------------------------------------------login page --------*/
+.login-box {
+    width: 86%;
+}
 /*--------------------------------------------------------------------------------------------Sign UP------------*/
 div.bg-image4{
     height: 100%;

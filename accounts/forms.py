@@ -6,8 +6,19 @@ from .models import Profile
 
 class UserLoginForm(forms.Form):
     #This form is used to login in users
-    username = forms.CharField(max_length=35)
-    password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(widget=forms.TextInput(
+        attrs={
+            "id": "inputUsername",
+            "class": "form-control",
+            }
+        )
+    )   
+    password = forms.CharField(widget=forms.PasswordInput(
+        attrs={
+            "id": "inputPasswrd",
+            "class": "form-control"
+        }
+        ))
     
 
 class UserRegistrationForm(UserCreationForm):

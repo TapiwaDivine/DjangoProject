@@ -79,7 +79,7 @@ def bug_form_page(request):
             form.instance.author = request.user
             messages.success(request, "Your Issue has been Submitted!")
             form.save()
-            return redirect(reverse('viewissue'))
+            return redirect(reverse('allissues'))
     else:
         form = BugCreationForm() 
     return render(request, 'bugform.html', {"bug_form": form})

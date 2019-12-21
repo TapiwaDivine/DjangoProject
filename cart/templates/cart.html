@@ -1,9 +1,8 @@
 {% extends 'base.html' %} {% block content %}
+{% if cart_items %}
 <div class="row row-flex">
     {% for item in cart_items %}
     <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">
-        <div class="feature" style="background-image: url('{{ MEDIA_URL }}{{ item.feature.image }}')"></div>
-
         <div class="caption">
             <h3>{{ item.feature.title }}</h3>
             <p class="feature-desscription">{{ item.feature.content }}</p>
@@ -31,4 +30,11 @@
     <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
     <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
 </div>
+{% else %}
+<div class="container-fluid">
+    <h1 class="noitems">No Items Selected</h1>
+    <p class="noitems-description">Selected a feature and click add </p>
+    <p class="noitems-description" style="margin-bottom: 109px"><a href="{% url 'allfeatures' %}">Click here</a> to select the features you want</p>
+</div>
+{% endif %}
 {% endblock %}

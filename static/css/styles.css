@@ -191,10 +191,11 @@ hero-txt {
   right: -20px;
   transition: 0.5s;
 }
-.landingbtn span:hover {
-  padding-right: 25px;
-  opacity: 6;
-  right: 0;
+.landingbtn:hover {
+    padding-right: 25px;
+    opacity: 6;
+    right: 0;
+    color: #ff0;
 }
 .landingbtn:hover span:after {
   opacity: 1;
@@ -359,11 +360,13 @@ div.card-deck .card {
 .issues-btn {
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 16px;
+    padding-right: 15px;
     color: #fff;
     border-style: none;
-    background-color: #0080FF;
+    background-color: #4BB543;
+    text-align: center;
+    margin-left: 24px;
 }
 
 .bugsec-img {
@@ -392,7 +395,14 @@ img.comments-img {
     border-radius: 50%;
 }
 
-
+.view-all{
+    margin-top: 29px;
+    width: 120px;
+    height: 41px;
+    border: none;
+    color: #fff;
+    background-color: #0080FF;
+}
 
 /*---------------------------------------------------------------------Login Page--------------*/
 
@@ -653,8 +663,8 @@ footer-text {
 /*------------------------------------------------------------------------Community Page--------*/
 
 .bg-image6 {
-    background-image: linear-gradient( rgba(19, 19, 19, 0.1),
-    rgba(19, 19, 19, 0.1)),
+    background-image: linear-gradient( rgba(0, 0, 0, .5),
+    rgba(0, 0, 0, .3)), 
     url(/static/img/communtiy.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -677,9 +687,8 @@ footer-text {
     text-align: center;
     font-size: 24px;
     color: #fff;
-    font-weight: 900;
+    font-weight: 600;
     font-family: 'Roboto', sans-serif;
-    -webkit-text-stroke: .5px #fff;
 }
 
 .gs-header {
@@ -790,4 +799,15 @@ img#bugcardimg.card-img-top {
 
 #edit-pro {
     margin-left: 8%;
+}
+/*--------------------------------------------------------------------------------Cart page---------------------*/
+.noitems {    
+    text-align: center;
+    margin-top: 100px;
+    color: red;
+}
+.noitems-description {
+    text-align: center;
+    color: #000;
+}
 }
