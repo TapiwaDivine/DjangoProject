@@ -11,7 +11,7 @@ TASK_CHOICES = (
 )
 
 class Bug(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=20)
     content = models.TextField(null=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     date_created = models.DateTimeField(auto_now_add=True)

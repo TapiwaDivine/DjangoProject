@@ -69,8 +69,8 @@ def user_profile(request):
     logged_in_user_feature = Feature.objects.filter(author=request.user).values()
     context = {
         "user_info": user_info,
-        "user_bug": logged_in_user_bug,
-        "user_feature": logged_in_user_feature
+        "user_bugs": logged_in_user_bug,
+        "user_features": logged_in_user_feature,
     }
     return render(request, "profile.html", context)
 

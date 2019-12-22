@@ -31,34 +31,36 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <h5 class="profissues">My Requested Features</h5>
             <table class="table">
-                <thead>
+                <thead class="thead-light">
                     <tr>
                         <th scope="col">Title</th>
                         <th scope="col">Status</th>
                         <th scope="col">Price</th>
                     </tr>
                 </thead>
-                <tbody {% if feature.status == "to do" %} style="background-color: blanchedalmond" {% elif feature.status == "doing" %} style="background-color: khaki" {% else %}style="background-color: aquamarine" {% endif %}>
-                    {% if user_feature %}
+                <tbody {% if feature.status == "to do" %} style="background-color: blanchedalmond" {% elif feature.status == "doing" %} style="background-color: khaki" {% elif feature.status == "done" %}style="background-color: aquamarine"{% else %} {% endif %}>
+                {% if user_feature %}
                     <tr>
+                    {% for user_feature in user_features %}
                         <td>{{ user_feature.title }}</td>
                         <td>{{ user_feature.status }}</td>
                         <td>€{{ user_feature.price }}</td>
+                    {% endfor %}
                     </tr>
-                    {% else %}
+                {% else %}
                     <tr>
                         <td> No Feature Requested</td>
                         <td>None</td>
                         <td>€0</td>
                     </tr>
-                    {% endif %}
+                {% endif %}
                 </tbody>
             </table>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 70px; margin-bottom: 40px;">
             <h5 class="profissues">My Issues</h5>
             <table class="table">
-                <thead>
+                <thead class="thead-light">
                     <tr>
                         <th scope="col">Title</th>
                         <th scope="col">Status</th>
@@ -66,19 +68,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% if bug %}
+                {% if user_bug %}
                     <tr>
+                    {% for user_bug in user_bugs %}
                         <td>{{ user_bug.title }}</td>
                         <td>{{ user_bug.status }}</td>
                         <td>€{{ user_bug.price }}</td>
+                    {% endfor %}
                     </tr>
-                    {% else %}
+                {% else %}
                     <tr>
                         <td> No Issue Fix Requested </td>
                         <td>None</td>
                         <td>€0</td>
                     </tr>
-                    {% endif %}
+                {% endif %}
                 </tbody>
             </table>
         </div>

@@ -137,6 +137,19 @@ img.bugsec-img {
 button.view-all-features{
     margin-left: 20px;
 }
+/*--------------------------featureview---*/
+h2#bugcardimg.card-title {
+    font-size: 18px;
+    margin-left: 20px;
+}
+button.likebtn2 {
+    width: 63px;
+    height: 37px;
+}
+button.likebtn {
+    width: 63px;
+    height: 37px;
+}
 /*----------------------------------------------------------------------------------------Community Page--------*/
 div.bg-image6 {
     height: 34vh;
@@ -201,4 +214,8 @@ i.fab {
 
 form.bug-form{
     width: 90%;
+}
+/*------------------------------------------------------------Profile Page----------*/
+.user_prof_heading {
+    margin-left: 12%;
 }

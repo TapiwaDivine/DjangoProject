@@ -2,11 +2,8 @@
 <div class="container">
     <div class="card mt-5 mb-3" id="card{{ feature.id }}">
         <div class="row">
-            <div class="col-md-1">
-                <img src="/static/img/bbug.png" class="card-img-top mt-4 ml-4" id="bugcardimg" alt="Feature Image Avatar">
-            </div>
             <div class="col-md-6">
-                <h2 class="card-title" id="bugcardimg">{{ feature.title }} {% if feature.status == "to do" %}
+                <h2 class="card-title" id="bugcardimg">{{ feature.title }}    {% if feature.status == "to do" %}
                     <span class="badge badge-danger">{{ feature.status }}</span> {% elif feature.status == "doing" %}
                     <span class="badge badge-warning">{{ feature.status }}</span> {% else %}
                     <span class="badge badge-success">{{ feature.status }}</span> {% endif %}
@@ -28,20 +25,26 @@
         <div class="card-body">
             <p class="card-text">{{ feature.content }}</p>
             <p class="card-text"><small class="text-muted">Posted by {{ feature.date_created }} on {{ feature.author }}</small></p>
-            <form action="{% url 'likes' %}" method="POST">
-                {% csrf_token %} {% if request.user in feature.votes.all %}
-                <button type="submit" name="feature_id" value="{{ feature.id }}" class="likebtn2"><i class="fa fa-heart"></i> Liked</button> {% else %}
-                <button type="submit" name="feature_id" value="{{ feature.id }}" class="likebtn"><i class="fa fa-heart"></i> Like</button> {% endif %}
-            </form>
-            <form method="POST" action="{% url 'add_to_cart' feature.id %}" style="width: 30%; margin-left: 67%">
-                {% csrf_token %}
-                <div class="input-group">
-                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                    <span class="imput-group-btn">
-                        <button class="btn btn-success" type="submit">add to cart</button>
-                    </span>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="{% url 'likes' %}" method="POST">
+                        {% csrf_token %} {% if request.user in feature.votes.all %}
+                        <button type="submit" name="feature_id" value="{{ feature.id }}" class="likebtn2"><i class="fa fa-heart"></i> Liked</button> {% else %}
+                        <button type="submit" name="feature_id" value="{{ feature.id }}" class="likebtn"><i class="fa fa-heart"></i> Like</button> {% endif %}
+                    </form>
                 </div>
-            </form>
+                <div class="col-md-6">
+                    <form method="POST" action="{% url 'add_to_cart' feature.id %}" class="cartform">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Qty">
+                            <span class="input-group-btn">
+                                <button class="btn btn-success" type="submit">add to cart</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <p class="card-text"><small class="text-muted">{{ feature.user_comment.count }} Comments • Likes {{ feature.votes.count }}</small><span style="margin-left: 75%"><i class="fa fa-tag"></i> €{{ feature.price }}.00</span></p>
             <hr> {% for comment in feature.user_comment.all %}
             <div class="row mt-3 mb-3">

@@ -47,7 +47,6 @@
 <div class="container mb-5">
     <div class="gs-section">
         <h2 class="gs-header">Features Section</h2>
-        <hr class="section-hr">
     </div>
     {% for feature in features %}
     <div id="accordion">
@@ -72,7 +71,7 @@
         </div>
     </div>
     {% endfor %}
-    <a href="{% url 'allfeatures' %}"><button type="button" class="view-all">See All Features</button></a>
+    <a href="{% url 'allfeatures' %}"><button type="button" class="view-all">All Features</button></a>
     <a href="{% url 'request_feature' %}" <button class="issues-btn">Request Feature</button></a>
 </div>
 {% endblock %}
