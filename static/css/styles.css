@@ -168,13 +168,14 @@ hero-txt {
 
 .landingbtn {
     color: #fff;
-    background-color: #4BB543;
-    width: 250px;
-    border: none;
+    background-color: transparent;
+    width: 330px;
+    font-size: 22px;
     border-radius: 4px;
     height: 70px;
-    transition: all 0.5s;
     cursor: pointer;
+    border: 3px solid yellow;
+
 }
 
 .landingbtn span {
@@ -184,22 +185,25 @@ hero-txt {
   transition: 0.5s;
 }
 .landingbtn span:after {
-  content: '\00BB';
+  content: '';
   position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.5s;
+  color: #fff;
 }
 .landingbtn:hover {
     padding-right: 25px;
     opacity: 6;
     right: 0;
-    color: #ff0;
+    color: #fff;
+    background-color: #4657b2;
 }
 .landingbtn:hover span:after {
   opacity: 1;
   right: 0;
+  color: #fff;
 }
 
 /*---------------------------------------------------------------Services Section---------*/
