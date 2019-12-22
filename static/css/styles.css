@@ -198,8 +198,18 @@ hero-txt {
     opacity: 6;
     right: 0;
     color: #fff;
-    background-color: #4657b2;
+    transition: ease-in-out 0.5s;
+    background-color: #c7c756;
 }
+.landingbtn:visited {
+    padding-right: 25px;
+    opacity: 6;
+    right: 0;
+    color: #fff;
+    transition: ease-in-out 0.5s;
+    background-color: #c35d5d;
+}
+
 .landingbtn:hover span:after {
   opacity: 1;
   right: 0;
@@ -820,4 +830,16 @@ img#bugcardimg.card-img-top {
 .noitems-description {
     text-align: center;
     color: #000;
+}
+.col-xs-10.col-xs-offset-1
+.col-sm-offset-0.col-sm-6
+.col-md-4.display.panel.panel-display {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+}
+.carttotal{
+    margin-left: 47%;
+    font-size: 25px;
+    color: black;
 }
