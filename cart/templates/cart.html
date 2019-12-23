@@ -28,7 +28,7 @@
 </div>
 <div class="row">
     <p class="carttotal">Total  <i class="fa fa-euro-sign"></i>{{ total }}</p>
-    <button href="{% url 'checkout' %}" class="checkout-btn" role="button"><i class="fa fa-credit-card"></i>  Checkout</button>
+    <a href="{% url 'checkout' %}" class="checkoutanchor"><button class="checkout-btn" type="button"><i class="fa fa-credit-card"></i>  Checkout</button></a>
 </div>
 {% else %}
 <div class="container-fluid">

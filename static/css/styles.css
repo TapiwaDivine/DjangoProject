@@ -833,7 +833,7 @@ img#bugcardimg.card-img-top {
 }
 .caption {
     margin-left: 36%;
-    margin-right: -10%;
+    margin-right: -20%;
     margin-top: 5%;
 }
 .carttotal{
@@ -857,13 +857,15 @@ img#bugcardimg.card-img-top {
 /*--------------------------------------------------------------------Checkout Page---*/
 .checkoutpg {
     margin-top: 4%;
-    margin-left: 35%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
-
-.checkout-btn{
-    margin-left: 2%;
+.checkoutanchor{
     margin-top: 3%;
-    width: 165px;
+}
+.checkout-btn{
+    margin-left: 1%;
+    width: 135px;
     margin-bottom: 5%;
     background-color: #4bb543;
     border: none;
@@ -873,4 +875,7 @@ img#bugcardimg.card-img-top {
 .checkout-btn:hover{
     background-color: #478542;
     transition: ease-in-out .5s;
+}
+.ordertotal{
+    margin-left: 2%;
 }

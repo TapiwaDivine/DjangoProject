@@ -220,10 +220,16 @@ form.bug-form{
     margin-left: 12%;
 }
 /*-------------------------------------------------------------cartpage---------*/
-div.col-xs-10.col-xs-offset-1
-.col-sm-offset-0.col-sm-6
-.col-md-4.display.panel.panel-display {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 9%;
+d.caption {
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 11%;
+}
+p.carttotal {
+    margin-left: 12%;
+    margin-top: 10%;
+}
+button.checkout-btn {
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
