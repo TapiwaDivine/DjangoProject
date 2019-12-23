@@ -844,7 +844,7 @@ img#bugcardimg.card-img-top {
     color: black;
 }
 /*--------------------------------------------------------------------Checkout Page---*/
-checkoutpg {
+.checkoutpg {
     margin-top: 4%;
     margin-left: 35%;
 }
