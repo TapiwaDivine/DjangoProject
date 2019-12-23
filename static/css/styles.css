@@ -831,17 +831,28 @@ img#bugcardimg.card-img-top {
     text-align: center;
     color: #000;
 }
-.col-xs-10.col-xs-offset-1
-.col-sm-offset-0.col-sm-6
-.col-md-4.display.panel.panel-display {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4%;
+.caption {
+    margin-left: 36%;
+    margin-right: -10%;
+    margin-top: 5%;
 }
 .carttotal{
-    margin-left: 47%;
+    margin-left: 37%;
     font-size: 25px;
     color: black;
+    margin-top: 3%;
+}
+
+.cartmend-btn{
+    border: none;
+    background-color: skyblue;
+    color: #fff;
+    transition: ease-in-out .5s;
+}
+.cartmend-btn:hover{
+    border: none;
+    background-color: #60a0ba;
+    transition: ease-in-out .5s;
 }
 /*--------------------------------------------------------------------Checkout Page---*/
 .checkoutpg {
@@ -849,4 +860,17 @@ img#bugcardimg.card-img-top {
     margin-left: 35%;
 }
 
-
+.checkout-btn{
+    margin-left: 2%;
+    margin-top: 3%;
+    width: 165px;
+    margin-bottom: 5%;
+    background-color: #4bb543;
+    border: none;
+    color: #fff;
+    transition: ease-in-out .5s;
+}
+.checkout-btn:hover{
+    background-color: #478542;
+    transition: ease-in-out .5s;
+}
