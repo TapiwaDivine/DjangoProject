@@ -229,7 +229,15 @@ p.carttotal {
     margin-left: 12%;
     margin-top: 10%;
 }
+/*-----------------------------------------------------------checkoutpage--------*/
 button.checkout-btn {
     margin-top: 10%;
+    margin-bottom: 10%;
+}
+input#submit_payment_btn.btn.btn-primary{
+    width: 277px;
+}
+div.checkoutpg {
+    margin-top: 12%;
     margin-bottom: 10%;
 }
