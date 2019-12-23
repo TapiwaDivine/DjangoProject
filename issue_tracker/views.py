@@ -9,6 +9,7 @@ from .forms import BugCreationForm, CommentForm
 from .models import Bug, Comment
 
 def render_contact_us_page(request):
+    
     #this function is for rendering contact_us html file
     return render(request, 'contact_us.html')
     
