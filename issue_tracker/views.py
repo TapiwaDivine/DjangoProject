@@ -10,12 +10,6 @@ from .models import Bug, Comment
 
 def render_contact_us_page(request):
     #this function is for rendering contact_us html file
-    if request.method == 'POST':
-        email = request.POST['contactus_email']
-        subject = request.POST['subject']
-        message = request.POST['message']
-         
-        send_mail(email, subject, message, ['tdchipatiko07@gmail.com'], fail_silently=False)
     return render(request, 'contact_us.html')
     
 def display_community_page(request):

@@ -1,4 +1,11 @@
-{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %}
+{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block head_js %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_r6a4pNIMzn04mHjH3tUHS");
+   })();
+</script>
+{% endblock head_js %}
 {% block content %}
 <div class="container-fluid">
     <div class="bg-image5">
@@ -6,17 +13,17 @@
         <p class="contactus-text">We'd love to help</p>
         <br>
         <div class="col-6">
-            <p class="contactus-text"> Get in touch with us if you have any question, query, complaint, feedback, compliment or you just want to say hello, it will mean a lot to us</p>
+            <p class="contactus-text"> Get in touch with us if you have any query, complaint, feedback, compliment or you just want to say hello, it will mean a lot to us</p>
         </div>
-        <form class="contact-form" method="POST" action="{% url 'contact_us' %}">
+        <form onsubmit="return sendMail(this);" class="contact-form" method="POST" action="{% url 'contact_us' %}">
             {% csrf_token %}
             <div class="form-group">
-                <label class="form-label" for="contactus-email">Email address</label>
-                <input type="email" id="contactus_email" name="contactus_email" class="form-control" placeholder="Email">
+                <label class="form-label" for="Name">Your Name</label>
+                <input type="text" id="sender" name="sender" class="form-control" placeholder="Name">
             </div>
             <div class="form-group">
-                <label class="form-label" for="subject">Subject</label>
-                <input type="subject" id="subject" name="subject" class="form-control" placeholder="subject">
+                <label class="form-label" for="contactus-email">Email address</label>
+                <input type="email" id="sender_email" name="sender_email" class="form-control" placeholder="Email">
             </div>
             <div class="form-group">
                 <label class="form-label" for="contact-message">Message</label>
@@ -87,5 +94,5 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript" src="{% static 'js/sendEmail.js' %}"></script>
 {% endblock %}
