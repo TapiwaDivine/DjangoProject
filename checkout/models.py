@@ -1,11 +1,9 @@
 from django.db import models
 from services.models import Feature
-# Create your models here.
 
 """
 this payment is copied from Ecommerce mini project with little adjustments
 """
-
 class Order(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
