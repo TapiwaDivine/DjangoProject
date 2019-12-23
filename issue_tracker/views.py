@@ -9,8 +9,11 @@ from .forms import BugCreationForm, CommentForm
 from .models import Bug, Comment
 
 def render_contact_us_page(request):
-    
     #this function is for rendering contact_us html file
+    if request.method == "POST":
+        messages.success(request, "Message sent successfully our team will get in touch with you as soon as possible.")
+    else:
+        messages.error(request, "Error, message not sent please try later or email directly")
     return render(request, 'contact_us.html')
     
 def display_community_page(request):
