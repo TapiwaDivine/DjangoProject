@@ -6,10 +6,10 @@ function sendMail(contactForm){
     })
     .then(
         function(response){
-            swal("Good job!", "You clicked the button!", "success");
+            swal("Message Sent!", "We will be in touch soon!", "success");
         },
         function(error){
-            alert("FAILED", error);
+            swal("Sending Failed!", "Email us directly if it continue!", "success");
         }
     );
     return false;
