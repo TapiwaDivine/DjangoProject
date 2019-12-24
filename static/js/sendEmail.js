@@ -6,9 +6,9 @@ function sendMail(contactForm){
     })
     .then(
         function(response){
-            console.log("You message has been sent successfully, a response will be sent soon to you email", response);
+            alert("You message has been sent successfully, a response will be sent soon to you email", response);
         },
         function(error){
-            console.log("There was a problem sending your message try again later", error)
-        })
+            alert("There was a problem sending your message try again later", error);
+        });
 }
