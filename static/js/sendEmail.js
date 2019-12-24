@@ -6,7 +6,7 @@ function sendMail(contactForm){
     })
     .then(
         function(response){
-            alert("MESSAGE SENT", response);
+            swal("Good job!", "You clicked the button!", "success");
         },
         function(error){
             alert("FAILED", error);
