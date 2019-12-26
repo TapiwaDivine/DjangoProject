@@ -7,8 +7,7 @@
                 <span class="badge badge-danger">{{ feature.status }}</span> {% elif feature.status == "doing" %}
                 <span class="badge badge-warning">{{ feature.status }}</span> {% else %}
                 <span class="badge badge-success">{{ feature.status }}</span> {% endif %}
-            </h5>
-            <form method="POST" action="{% url 'add_to_cart' feature.id %}" style="width: 30%; margin-left: 70%">
+            </h5>  style="width: 30%; margin-left: 70%">
                 {% csrf_token %}
                 <div class="input-group">
                     <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity" required>
