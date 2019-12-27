@@ -117,6 +117,10 @@ div.bugsection {
     text-align: center;
     padding-bottom: 30px;
 }
+input.addcartinputs{
+    width: 42%;
+    margin-left: 28%;
+}
 
 h3.webdev-header {
     color: #fff;

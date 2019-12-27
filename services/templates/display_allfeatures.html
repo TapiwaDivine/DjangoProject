@@ -7,16 +7,19 @@
                 <span class="badge badge-danger">{{ feature.status }}</span> {% elif feature.status == "doing" %}
                 <span class="badge badge-warning">{{ feature.status }}</span> {% else %}
                 <span class="badge badge-success">{{ feature.status }}</span> {% endif %}
-            </h5>  style="width: 30%; margin-left: 70%">
+            </h5>
+            <form method="POST" action="{% url 'add_to_cart' feature.id %}" class="all-feature-form">
                 {% csrf_token %}
-                <div class="input-group">
-                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity" required>
-                    <span class="imput-group-btn">
-                        <button class="btn btn-success" type="submit">add to cart</button>
-                    </span>
+                <div class="row">
+                    <div class="col-xs-8 col-sm-8 col-md-10">
+                        <input name="quantity" type="number" min="1" max="999" class="addcartinputs" placeholder="Qnty" required>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-2">
+                        <button class="all-feature-add" type="submit">add to cart</button>
+                    </div>
                 </div>
             </form>
-            <span style="margin-left: 90%"><i class="fa fa-tag"></i> €{{ feature.price }}.00</span>
+            <span class="all-feature-price"><i class="fa fa-tag"></i> €{{ feature.price }}.00</span>
             <p class="card-text">{{ feature.content }}</p>
             <a href="{% url 'featureview' id=feature.id %}" class="btn btn-info">view more</a>
         </div>
