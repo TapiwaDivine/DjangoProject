@@ -117,9 +117,20 @@ div.bugsection {
     text-align: center;
     padding-bottom: 30px;
 }
+
 input.addcartinputs{
     width: 42%;
-    margin-left: 28%;
+    margin-left: 58%;
+}
+
+button.all-feature-add {
+    margin-left: 66%;
+    height: 42px;
+}
+
+span.all-feature-price {
+    color: #000;
+    margin-left: 67%;
 }
 
 h3.webdev-header {

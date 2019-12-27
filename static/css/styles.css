@@ -353,8 +353,8 @@ div.card-deck .card {
 
 .addcartinputs {
     display: block;
-    width: 14%;
-    margin-left: 96%;
+    width: 17%;
+    margin-left: 121%;
     padding: 0.75rem 2rem;
     font-size: 0.875rem;
     font-weight: 400;
@@ -364,10 +364,12 @@ div.card-deck .card {
     background-clip: padding-box;
     border: 0 solid #ced4da;
     border-radius: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, 
+    -webkit-box-shadow 0.15s ease-in-out;
 }
 
 .all-feature-add {
-    margin-left: 37%;
+    margin-left: 71%;
     height: 42px;
     border: none;
     background: #4BB543;
