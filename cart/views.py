@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import login_required
 def view_cart(request):
     # this view renders the cart contents
     return render(request, 'cart.html')
-    
+
+@login_required   
 def add_to_cart(request, id):
     #view to add a quantity of specified Features to the cart
     quantity=int(request.POST.get('quantity'))
@@ -18,7 +19,7 @@ def add_to_cart(request, id):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     
     
-    
+@login_required   
 def adjust_cart(request, id):
     # This view is for ajusting  the quantity of Features
     quantity = int(request.POST.get('quantity'))

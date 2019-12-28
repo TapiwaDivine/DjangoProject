@@ -50,16 +50,19 @@ body {
 .navbar-dark .navbar-nav .nav-link {
     padding-top: 0;
     padding-bottom: 1rem;
-    color: #fff !important;
+    color: #fff;
     border-bottom: 3px solid transparent;
+    transition: ease-in-out 1s;
+    left: 0;
+    transition-property: width
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    border-bottom: 3px solid #FF69B4;
-    transition: 1s;
+    border-bottom: 3px solid #FF0;
+    color: #FF0;
+    transition: ease-in-out 1s;
     left: 0;
     transition-property: width;
-    transition-timing-function: ease-in-out;
 }
 
 .navbar-dark .navbar-nav .show>.nav-link,

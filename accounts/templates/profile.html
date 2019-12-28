@@ -39,7 +39,7 @@
                     </tr>
                 </thead>
                 <tbody {% if feature.status == "to do" %} style="background-color: blanchedalmond" {% elif feature.status == "doing" %} style="background-color: khaki" {% elif feature.status == "done" %}style="background-color: aquamarine"{% else %} {% endif %}>
-                {% if user_feature %}
+                {% if user_feature or user.user_feature.votes %}
                     <tr>
                     {% for user_feature in user_features %}
                         <td>{{ user_feature.title }}</td>
