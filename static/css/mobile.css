@@ -6,6 +6,13 @@ a.navbar-brand img{
     margin: 0;
     padding-top: 0;
 }
+nav.navbar-dark ul.navbar-nav a.nav-link {
+    padding-top: 12px;
+    padding-bottom: 2px;
+    transition-property: max-content;
+    margin-left: 6px;
+}
+
 .navbar-dark .navbar-nav .show>.nav-link, 
 .navbar-dark .navbar-nav .active>.nav-link, 
 .navbar-dark .navbar-nav .nav-link.show, 
