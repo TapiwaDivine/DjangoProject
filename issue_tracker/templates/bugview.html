@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-xs-7 col-sm-7 col-md-7">
-                    {% if comment.i_have_this_too == True %}
+                    {% if comment.author.profile.user in bug.votes.all %}
                     <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }} <span class="badge badge-warning" style="color: #fff;"> i have this too</span></p>
                     {% else %}
                     <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }}</p>

@@ -59,5 +59,5 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = [ 'text', 'i_have_this_too']
+        fields = [ 'text']
 

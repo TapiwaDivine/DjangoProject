@@ -25,7 +25,6 @@ def view_feature_details(request, id):
     if request.method == 'POST':
          form = CommentForm(request.POST)
          if form.is_valid():
-             print(form)
              form.instance.author = request.user
              comment = form.save(commit=False)
              comment.feature = feature
@@ -38,7 +37,6 @@ def view_feature_details(request, id):
         is_liked
     else:
         is_liked = True
-        
     context = {
         'feature': feature,
         'c_form': form,
@@ -46,7 +44,7 @@ def view_feature_details(request, id):
         }
     return render(request, 'featureview.html', context) 
 
-
+@login_required
 def like_a_feature_post(request):
     feature = get_object_or_404(Feature, id=request.POST.get('feature_id'))
     is_liked = False
@@ -57,7 +55,7 @@ def like_a_feature_post(request):
         feature.votes.add(request.user)
         is_liked = True
     return HttpResponseRedirect(feature.get_absolute_url())
-    
+
 @login_required
 def create_feature_page(request):
     #this function is for creating features and display the create features form page
@@ -109,4 +107,3 @@ def delete_feature(request, id):
         messages.error(request, 'You are not allowed to delete this Issue')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-    

@@ -34,7 +34,7 @@ class FeatureCreationForm(forms.ModelForm):
 
     class Meta: 
         model = Feature
-        fields = ['title', 'content']
+        fields = ['title', 'price','content']
         
     def clean_data(self, *args, **kwargs):
         title = self.cleaned_data.get('title')
@@ -59,5 +59,5 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = [ 'text', 'i_want_this_too']
+        fields = [ 'text']
         

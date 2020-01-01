@@ -36,7 +36,6 @@ class Comment(models.Model):
     bug = models.ForeignKey(Bug, related_name='comments', null=True, on_delete=models.CASCADE)
     author = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
     text = models.TextField()
-    i_have_this_too = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     

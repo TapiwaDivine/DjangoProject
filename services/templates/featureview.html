@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
+{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block page_title %} View Feature Details{% endblock %}{% block content %}
 <div class="container">
     <div class="card mt-5 mb-3" id="card{{ feature.id }}">
         <div class="row">
@@ -26,14 +26,15 @@
             <p class="card-text">{{ feature.content }}</p>
             <p class="card-text"><small class="text-muted">Posted by {{ feature.date_created }} on {{ feature.author }}</small></p>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                     <form action="{% url 'likes' %}" method="POST">
                         {% csrf_token %} {% if request.user in feature.votes.all %}
                         <button type="submit" name="feature_id" value="{{ feature.id }}" class="likebtn2"><i class="fa fa-heart"></i> Liked</button> {% else %}
                         <button type="submit" name="feature_id" value="{{ feature.id }}" class="likebtn"><i class="fa fa-heart"></i> Like</button> {% endif %}
                     </form>
+                    <small class="text-muted">{{ feature.user_comment.count }} Comments • Likes {{ feature.votes.count }}</small>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                     <form method="POST" action="{% url 'add_to_cart' feature.id %}" class="cartform">
                         {% csrf_token %}
                         <div class="input-group">
@@ -43,9 +44,9 @@
                             </span>
                         </div>
                     </form>
+                    <p class="feature-amount"><i class="fa fa-tag"></i> €{{ feature.price }}.00</p>
                 </div>
             </div>
-            <p class="card-text"><small class="text-muted">{{ feature.user_comment.count }} Comments • Likes {{ feature.votes.count }}</small><span style="margin-left: 75%"><i class="fa fa-tag"></i> €{{ feature.price }}.00</span></p>
             <hr> {% for comment in feature.user_comment.all %}
             <div class="row mt-3 mb-3">
                 <div class="col-xs-6 col-sm-6 col-md-6">
@@ -58,10 +59,10 @@
                     </div>
                 </div>
                 <div class="col-xs-7 col-sm-7 col-md-7">
-                    {% if comment.i_want_this_too == True %}
-                    <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }}<span class="badge badge-warning" style="color: #fff;"> i want this too</span></p>
+                    {% if comment.author.profile.user in feature.votes.all %}
+                        <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }}  <span class="badge badge-warning" style="color: #fff;"> i want this too</span></p>
                     {% else %}
-                    <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }}</p>
+                        <p class="card-text" style="margin-left: 60px; margin-top: 14px;">{{ comment.text }}</p>
                     {% endif %}
                 </div>
 
