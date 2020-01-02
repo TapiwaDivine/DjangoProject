@@ -10,6 +10,7 @@ TASK_CHOICES = (
 )
 
 class Feature(models.Model):
+    # model for feature
     title = models.CharField(max_length=20)
     content = models.TextField(null=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)

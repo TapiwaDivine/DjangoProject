@@ -47,6 +47,7 @@ def view_feature_details(request, id):
 
 @login_required
 def like_a_feature_post(request):
+    # view to like a feature
     feature = get_object_or_404(Feature, id=request.POST.get('feature_id'))
     is_liked = False
     if feature.votes.filter(id=request.user.id).exists():
@@ -73,6 +74,7 @@ def create_feature_page(request):
     
 @login_required
 def edit_feature(request, id):
+    # view to edit a feature 
     feature = get_object_or_404(Feature, pk=id)
     if request.method == 'POST':
         if request.user == feature.author:
@@ -99,6 +101,7 @@ def edit_feature(request, id):
     
 @login_required
 def delete_feature(request, id):
+    # deleting a feature
     del_feature = get_object_or_404(Feature, pk=id)
     if request.user == del_feature.author:
         del_feature.delete()
