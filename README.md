@@ -116,6 +116,8 @@ i have this too. Th issues and features are closed only by the admin as users mi
 
 ## Testing
 * Automated testing with Django TestCase
+    - Testing for views with login required decorator always failed so they have been removed from the test  available im the project
+    
 * All code were validated through:
     - [W3C Mark-up Validation Service](https://validator.w3.org/)
     - [W3C CSS Validation Service](http://www.css-validator.org/)
