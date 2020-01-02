@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
+{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block page_title %}UA | Community {% endblock %}{% block content %}
 <div class="container-fluid">
     <div class="bg-image6">
         <h1 class="comm-header">BECOME AN INSIDER</h1>
@@ -18,7 +18,7 @@
             <img src="{% static 'img/bug.png'%}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-title text-center">Bug Fix</h4>
-                <a href="{% url 'bugform' %}"><button type="button" class="btn btn-outline-danger" style="width: 100%; font-size: 1.1vw">Raise Issue</button></a>
+                <a href="{% url 'bugform' %}"><button type="button" class="btn btn-outline-danger" style="width: 100%; font-size: 1.1vw">Report Bug</button></a>
             </div>
         </div>
         <div class="card card-comm">

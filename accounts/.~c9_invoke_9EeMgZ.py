@@ -10,7 +10,6 @@ class UserLoginForm(forms.Form):
         attrs={
             "id": "inputUsername",
             "class": "form-control",
-            "required": True
             }
         )
     )   
@@ -23,11 +22,13 @@ class UserLoginForm(forms.Form):
     
 
 class UserRegistrationForm(UserCreationForm):
+    #This form is used to register new users
     password1 = forms.CharField(label="Password",
-                                widget=forms.PasswordInput),
+                                widget=forms.PasswordInput)
     password2 = forms.CharField(label="Password Confirmation", 
                                 widget=forms.PasswordInput)
-
+    email = forms.EmailField()
+    
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username', 'email' ,'password1', 'password2']

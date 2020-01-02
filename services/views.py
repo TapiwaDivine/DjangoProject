@@ -11,6 +11,7 @@ def get_services_page(request):
     feature_view = Feature.objects.all().order_by('date_created')[:3]
     return render(request, "services.html", {'features': feature_view})
 
+@login_required
 def render_all_features(request):
     # function to display all features a on single page
     feature_view = Feature.objects.all()

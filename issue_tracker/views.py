@@ -16,7 +16,8 @@ def display_community_page(request):
     #this function is for displaying commnuty page and rendering 3 bugs on the commuity page
     bug_view = Bug.objects.all().order_by('date_created')[:3]
     return render(request, 'community.html', {'bugs': bug_view})
-    
+ 
+@login_required
 def render_all_bugs(request):
     # function to display all issues a on single page
     bug_view = Bug.objects.all()

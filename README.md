@@ -80,6 +80,8 @@ i have this too. Th issues and features are closed only by the admin as users mi
 
 - Features Left to Implement to implement include a user dashboard  that displays liked features or bugs
 - Also Website dashboard that has graphs to display the work on features and bugs
+- Pagination for rendering more features and bugs
+- Search bar to cater for easy and dynamic navigation
 
 ## Technologies Used
 1. In this project i used:
@@ -113,19 +115,42 @@ i have this too. Th issues and features are closed only by the admin as users mi
 5. Figma was my mockup platform of choice it worked fantastic form me.
 
 ## Testing
-- All code were validated through:
+* Automated testing with Django TestCase
+* All code were validated through:
     - [W3C Mark-up Validation Service](https://validator.w3.org/)
     - [W3C CSS Validation Service](http://www.css-validator.org/)
-- Add Recipe And Edit Recipe forms
+* Add Recipe And Edit Recipe forms
     - I tested both form and forms are functioning well and have a required element to make sure that no field will be empty. At first the form was submitting  without any data
-- Login Form and Signup
-    - both form are tested for with empty submition which both of which will request user to enter information in required fieldset
-    - both forms require valid emails as they will not accept invalid email
-    - both form have feedback on submission if the submition is successful
-- Mobile Responsive
-    - This web-app is mostly responsive in most screens i have tested it on Iphone X, Huawei Psmart2019,Windows Chrome browser and Opera browser
-    - To note is that there was a bug on the signup and login nav link as they are unclickable on the mobile screens. This was because of the logo div that blocking the nav link so i fixed by stopping the div from displaying on mobile view.
-- Futher testing on this project was done manually using developer toools to test the website
+* Signup Form
+    - When you click Signup page On navbar
+    - Submit an empty form ,error message that required fields appears.
+    - Submit form with a registered email already and verify that a relevant error message appears.
+    - Submit form with a taken username already and verify that a relevant error message appears.
+    - Submit form with different passwords and verify that a relevant error message appears.
+    - Submit the form with all inputs valid and verify you are redirected to the Profile page where a success message will appear.
+
+* Login Form
+    - When you click Login page On navbar
+    - Submit an empty form ,error message that required fields appears.
+    - Submit the form with an unregisterd username or email, a relevant error message appears.
+    - Submit the form again with valid registered user credentials, you will be redirected to the homepage and a success message appears.
+
+* Profile 
+    - Click on the profile page in the navbar
+    - A half populated form with details from sign up form and a default image will appear
+    - Edit form allows user to add further details and add picture
+    - Profile form cannot be posted empty because it return  the required fields error
+    - profile cannot change to another user's email and it return the relevant error
+
+* Bug Form & Features form
+    * When you click a report bug or request issue button a form will appear
+    * Submit an empty form the form will render a required fields error
+
+    
+* Mobile Responsive
+    - This web-app is mostly responsive in most screens i have tested it on Iphone X, Huawei Psmart2019,Windows Chrome browser, edge browser and Opera browser
+
+- Futher testing on this project was done manually using developer tools to test the website
 - I also openned each page to check and see if there are any bug or frontend errors.
 
 ## Deployment
